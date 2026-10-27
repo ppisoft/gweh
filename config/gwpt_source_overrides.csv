@@ -1,0 +1,4 @@
+phase_id,field,expected_original,effective_value,source_alias,source_date,ontology,reason
+G100001050648,Capacity (MW),461.6,576,CH_ANT2_RCA,2025,installed_nameplate_max_MW,signed 2025 RCA 80 x 7.2 MW; not additive to 461.6MW
+G100000927160,Capacity (MW),336.6,306,CH_PAMPA_ENGIE,2025-07,developer_actual_project_capacity_MW,"51 machines; RCA historic 336.6MW, implemented 306MW"
+G100001050672,Status,pre-construction,cancelled,CH_VIENTOS_WITHDRAWAL,2025-02-21,project_eligibility_status,formal withdrawal before freeze; GWPT raw remains in archived input

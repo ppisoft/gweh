@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Cite this dataset and the associated GWEH software using their respective version DOIs."
+title: "GWEH: Global Wind Energy Hotspots reference-region dataset (v1.0.0)"
+type: dataset
+authors:
+  - family-names: Pisoft
+    given-names: Petr
+    orcid: "https://orcid.org/0000-0002-5034-9169"
+    affiliation: "Department of Atmospheric Physics, Faculty of Mathematics and Physics, Charles University, Prague, Czech Republic"
+abstract: "Evidence-based global reference regions for wind-energy research, with geometries, R/D/P/S selection evidence, model-grid representation and independent validation."
+version: "1.0.0"
+license: CC-BY-4.0
+keywords:
+  - wind energy
+  - regionalisation
+  - Earth-system data
+  - geospatial analysis
+doi: "10.5281/zenodo.23555696"
+repository-code: "https://github.com/ppisoft/gweh"

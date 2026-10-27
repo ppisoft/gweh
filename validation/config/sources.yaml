@@ -1,0 +1,154 @@
+schema_version: 1
+validation_branch: PUBLICATION_EXTERNAL_CORROBORATION
+no_feedback_to_gweh_v1: true
+source_roles:
+  GOWIRES:
+    layer: V1_ONSHORE_LOCATION
+    path: raw/GOWIRES/GOWIRES_V1.csv
+    kind: csv_points
+    delimiter: ;
+    encoding: cp1252
+    longitude_field: longitude
+    latitude_field: latitude
+    optional_group_fields:
+    - country
+    - source
+    resource_fields:
+    - WPD
+    - WSM
+    expected_snapshot: 2025-07
+    expected_row_count: 416418
+    expected_valid_coordinate_rows: 416417
+  GRW:
+    layer: V1_ONSHORE_LOCATION
+    path: raw/GRW/wind_all_2024q2_v1.gpkg
+    kind: vector_points
+    expected_crs: EPSG:3857
+    optional_group_fields:
+    - country_code
+    - construction_date
+    - construction_year
+    - construction_quarter
+    - land_cover_2018
+    expected_snapshot: 2024Q2
+    expected_feature_count: 375197
+  DeepOWT:
+    layer: V2_OFFSHORE_LOCATION
+    path: raw/DeepOWT/DeepOWT.geojson
+    kind: vector_points
+    expected_crs: EPSG:4326
+    expected_temporal_coverage: 2016Q1-2025Q1
+    ground_truth_geometry: polygon_location_buffers
+    ground_truth_location_adapter: polygon_centroid
+    ground_truth_note: DeepOWT 2021Q2 location ground truth is distributed as ~100
+      m polygons around manually labelled target locations; GWEH V2 converts each
+      polygon to one centroid location for hotspot containment.
+    ground_truth:
+    - raw/DeepOWT/gt_2021Q2_nsb.geojson
+    - raw/DeepOWT/gt_2021Q2_ecs.geojson
+    - raw/DeepOWT/gt_2021Q2_vtn.geojson
+  IRENASTAT:
+    layer: V3_MARKET_SANITY
+    file_glob: raw/IRENASTAT/C-ELECCAP_*.csv
+    encoding: cp1252
+    skiprows: 1
+    canonical_year: 2025
+    sensitivity_year: 2024
+    required_fields:
+    - Country/area
+    - Technology
+    - Grid connection
+    - Year
+    - Electricity capacity statistics
+    leaf_technologies:
+      onshore:
+      - Onshore wind energy
+      - Onshore wind
+      offshore:
+      - Offshore wind energy
+      - Offshore wind
+    parent_technologies:
+    - Wind energy
+    - Wind
+    country_aliases:
+      chinese taipei: taiwan
+      czechia: czech republic
+      bosnia herzg: bosnia and herzegovina
+      dominican rep: dominican republic
+      iran ir: iran
+      lao pdr: laos
+      moldova rep: moldova
+      new caledon: new caledonia
+      russian fed: russia
+      united arab em: united arab emirates
+      china hk sar: hong kong
+      bonaire sint eustatius and saba: bes islands
+    exclude_country_keys:
+    - eurasia
+    - oceania
+    - world
+    - africa
+    - asia
+    - europe
+    - north america
+    - south america
+    - middle east
+    population_reporting:
+    - coverage_population_irena_positive_gwpt_missing_as_zero
+    - observed_pair_population_irena_positive_gwpt_observed
+    - positive_pair_population_both_positive_for_ratio_and_primary_rank
+  MERRA2:
+    layer: V4_RESOURCE_CORROBORATION
+    directory: raw/MERRA2/M2T1NXSLV_5.12.4/2008-2017
+    protocol: config/validation_merra.yaml
+  GWA4:
+    layer: V4_RESOURCE_REFERENCE
+    note: Core R evidence and comparator for independent MERRA-2 rank corroboration;
+      not itself an external validation source.
+validation_layers:
+  V0:
+    name: input_preflight_and_provenance
+    sources:
+    - GOWIRES
+    - GRW
+    - DeepOWT
+    - IRENASTAT
+    - MERRA2
+    - GWA4
+  V1:
+    name: onshore_location_corroboration
+    sources:
+    - GOWIRES
+    - GRW
+    keep_products_separate: true
+    headline_metric: denominator_scoped_same_candidate_containment
+    secondary_metric: scoped_region_area_fraction
+  V2:
+    name: offshore_location_corroboration
+    sources:
+    - DeepOWT
+    headline_metric: denominator_scoped_same_candidate_containment
+    secondary_metrics:
+    - nearest_selected_region_distance_km
+    - unmatched_point_fraction
+    - scoped_region_area_fraction
+  V3:
+    name: country_capacity_sanity
+    sources:
+    - IRENASTAT
+    - GWPT
+    canonical_year: 2025
+    sensitivity_year: 2024
+    headline_metrics:
+    - spearman_rank_correlation
+    - gwpt_to_irena_ratio_distribution
+  V4:
+    name: resource_corroboration
+    sources:
+    - MERRA2
+    - GWA4
+    primary_metric: MERRA2_mean_WPD50_proxy_vs_GWA4_WPD100_mean_aw_Spearman
+interpretation:
+  external_validation_is_downstream_only: true
+  no_automatic_retuning: true
+  no_single_metric_release_threshold: true

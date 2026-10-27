@@ -1,0 +1,66 @@
+candidate_id,region_name,surface_type,RQ_percentile,RQ_score,RF_percentile,RF_score,R_score,D_peer_percentile,D_score,P_peer_percentile,P_score,S_score,H_without_S,H_score,score_complete
+antofagasta_taltal_onshore,Antofagasta–Taltal onshore,onshore,23.076923076923077,1.0,35.38461538461539,1.0,1.0,13.953488372093023,0.0,20.454545454545457,1.0,2,2.0,4.0,True
+baltic_offshore,Baltic offshore,offshore,92.3076923076923,4.0,93.84615384615384,4.0,4.0,61.53846153846154,3.0,100.0,4.0,4,11.0,15.0,True
+british_isles_onshore,British Isles onshore,onshore,81.53846153846153,4.0,83.07692307692308,4.0,4.0,62.7906976744186,3.0,65.9090909090909,3.0,3,10.0,13.0,True
+canadian_prairies,Canadian Prairies,onshore,58.46153846153847,2.0,44.61538461538462,2.0,2.0,39.53488372093023,1.0,22.727272727272727,1.0,2,4.0,6.0,True
+caribbean_colombia_venezuela_onshore,Caribbean Colombia/Venezuela onshore corridor,onshore,21.53846153846154,1.0,53.84615384615385,2.0,2.0,9.30232558139535,0.0,27.27272727272727,1.0,3,3.0,6.0,True
+central_china_henan_hubei_shanxi_onshore,Central China Henan-Hubei-Shanxi onshore,onshore,13.846153846153847,0.0,15.384615384615385,0.0,0.0,86.04651162790698,4.0,79.54545454545455,3.0,2,7.0,9.0,True
+central_med_offshore,Central Mediterranean / Italy offshore,offshore,67.6923076923077,3.0,61.53846153846154,3.0,3.0,15.384615384615385,0.0,73.68421052631578,3.0,3,6.0,9.0,True
+columbia_gorge_pnw_onshore,Columbia Gorge-Pacific Northwest onshore,onshore,32.30769230769231,1.0,49.23076923076923,2.0,2.0,41.86046511627907,2.0,11.363636363636363,0.0,2,4.0,6.0,True
+east_china_offshore,East China offshore,offshore,76.92307692307693,3.0,76.92307692307693,3.0,3.0,92.3076923076923,4.0,57.89473684210527,2.0,3,9.0,12.0,True
+east_china_onshore,East China onshore,onshore,12.307692307692308,0.0,7.6923076923076925,0.0,0.0,88.37209302325581,4.0,72.72727272727273,3.0,3,7.0,10.0,True
+egypt_suez_mixed,Egypt/Suez mixed,mixed,66.15384615384615,3.0,67.6923076923077,3.0,3.0,25.581395348837212,1.0,52.27272727272727,2.0,3,6.0,9.0,True
+english_channel_offshore,English Channel offshore,offshore,93.84615384615384,4.0,96.92307692307692,4.0,4.0,69.23076923076923,3.0,42.10526315789473,2.0,2,9.0,11.0,True
+fennoscandia_north_onshore,Fennoscandia North onshore,onshore,35.38461538461539,1.0,58.46153846153847,2.0,2.0,72.09302325581395,3.0,75.0,3.0,2,8.0,10.0,True
+france_onshore_wind_belt,France onshore wind belt,onshore,38.46153846153847,1.0,41.53846153846154,2.0,2.0,76.74418604651163,3.0,36.36363636363637,1.0,3,6.0,9.0,True
+guangdong_offshore,Guangdong offshore,offshore,73.84615384615385,3.0,70.76923076923077,3.0,3.0,76.92307692307693,3.0,47.368421052631575,2.0,3,8.0,11.0,True
+guangxi_onshore,Guangxi onshore,onshore,4.615384615384616,0.0,13.846153846153847,0.0,0.0,67.44186046511628,3.0,90.9090909090909,4.0,3,7.0,10.0,True
+guizhou_onshore,Guizhou onshore,onshore,3.076923076923077,0.0,9.230769230769232,0.0,0.0,46.51162790697674,2.0,84.0909090909091,4.0,2,6.0,8.0,True
+horn_of_africa_onshore,Horn of Africa onshore,onshore,33.84615384615385,1.0,50.76923076923077,2.0,2.0,11.627906976744185,0.0,0.0,0.0,2,2.0,4.0,True
+hunan_onshore,Hunan onshore,onshore,1.5384615384615385,0.0,6.153846153846154,0.0,0.0,58.139534883720934,2.0,54.54545454545454,2.0,2,4.0,6.0,True
+iberia_onshore,Iberia onshore,onshore,26.153846153846157,1.0,43.07692307692308,2.0,2.0,81.3953488372093,4.0,86.36363636363636,4.0,3,10.0,13.0,True
+illinois_indiana_onshore,Illinois-Indiana onshore,onshore,50.76923076923077,2.0,18.461538461538463,0.0,1.0,55.81395348837209,2.0,29.545454545454547,1.0,2,4.0,6.0,True
+inner_mongolia_north_china_onshore,Inner Mongolia/North China onshore,onshore,63.07692307692307,3.0,63.07692307692307,3.0,3.0,100.0,4.0,97.72727272727273,4.0,3,11.0,14.0,True
+irish_celtic_seas_offshore,Irish/Celtic Seas offshore,offshore,98.46153846153847,4.0,100.0,4.0,4.0,53.84615384615385,2.0,89.47368421052632,4.0,3,10.0,13.0,True
+japan_offshore,Japan offshore,offshore,84.61538461538461,4.0,87.6923076923077,4.0,4.0,38.46153846153847,1.0,36.84210526315789,1.0,3,6.0,9.0,True
+kazakhstan_central_asian_steppe_onshore,Kazakhstan / Central Asian Steppe onshore,onshore,64.61538461538461,3.0,46.15384615384615,2.0,3.0,20.930232558139537,1.0,15.909090909090908,0.0,3,4.0,7.0,True
+luzon_onshore,Luzon onshore,onshore,16.923076923076923,0.0,40.0,2.0,1.0,4.651162790697675,0.0,50.0,2.0,3,3.0,6.0,True
+michigan_ontario_great_lakes_onshore,Michigan-Ontario Great Lakes onshore,onshore,55.38461538461539,2.0,69.23076923076923,3.0,3.0,44.18604651162791,2.0,4.545454545454546,0.0,2,5.0,7.0,True
+n_africa_atlantic_mixed,N Africa Atlantic mixed,mixed,80.0,4.0,80.0,4.0,4.0,18.6046511627907,0.0,70.45454545454545,3.0,2,7.0,9.0,True
+namibia_coast_mixed,Namibia Coast mixed,mixed,78.46153846153847,3.0,78.46153846153847,3.0,3.0,0.0,0.0,38.63636363636363,1.0,3,4.0,7.0,True
+ne_brazil_offshore,NE Brazil offshore,offshore,60.0,3.0,32.30769230769231,1.0,2.0,0.0,0.0,10.526315789473683,0.0,2,2.0,4.0,True
+ne_brazil_onshore,NE Brazil onshore,onshore,15.384615384615385,0.0,29.230769230769234,1.0,1.0,79.06976744186046,3.0,63.63636363636363,3.0,3,7.0,10.0,True
+ne_china_manchuria_onshore,NE China / Manchuria onshore,onshore,36.92307692307693,1.0,20.0,1.0,1.0,93.02325581395348,4.0,95.45454545454545,4.0,3,9.0,12.0,True
+ningxia_shaanxi_onshore,Ningxia/Shaanxi onshore,onshore,30.76923076923077,1.0,23.076923076923077,1.0,1.0,83.72093023255815,4.0,93.18181818181817,4.0,3,9.0,12.0,True
+north_central_europe_onshore,North-Central Europe onshore - Germany-Poland-Benelux wind belt,onshore,46.15384615384615,2.0,27.692307692307693,1.0,2.0,90.69767441860465,4.0,40.909090909090914,2.0,2,8.0,10.0,True
+north_sea_offshore,North Sea offshore,offshore,100.0,4.0,98.46153846153847,4.0,4.0,100.0,4.0,94.73684210526315,4.0,4,12.0,16.0,True
+norwegian_barents_offshore,Norwegian/Barents offshore,offshore,96.92307692307692,4.0,95.38461538461539,4.0,4.0,0.0,0.0,5.263157894736842,0.0,2,4.0,6.0,True
+oman_arabian_sea_mixed,Oman/Arabian Sea mixed,mixed,72.3076923076923,3.0,75.38461538461539,3.0,3.0,2.3255813953488373,0.0,68.18181818181817,3.0,3,6.0,9.0,True
+patagonia_onshore,Patagonia onshore,onshore,89.23076923076924,4.0,81.53846153846153,4.0,4.0,34.883720930232556,1.0,45.45454545454545,2.0,3,7.0,10.0,True
+philippines_priority_offshore,Philippines priority offshore corridor,offshore,53.84615384615385,2.0,64.61538461538461,3.0,3.0,0.0,0.0,78.94736842105263,3.0,3,6.0,9.0,True
+saudi_red_sea_neom_mixed,Saudi Red Sea/NEOM mixed,mixed,47.69230769230769,2.0,52.307692307692314,2.0,2.0,0.0,0.0,18.181818181818183,0.0,3,2.0,5.0,True
+se_australia_offshore,SE Australia offshore,offshore,95.38461538461539,4.0,92.3076923076923,4.0,4.0,0.0,0.0,26.31578947368421,1.0,3,5.0,8.0,True
+se_australia_onshore,SE Australia onshore,onshore,44.61538461538462,2.0,24.615384615384617,1.0,2.0,48.837209302325576,2.0,88.63636363636364,4.0,3,8.0,11.0,True
+se_europe_balkans_onshore,SE Europe / Balkans onshore,onshore,18.461538461538463,0.0,38.46153846153847,1.0,1.0,60.46511627906976,3.0,77.27272727272727,3.0,2,7.0,9.0,True
+south_africa_cape_onshore,South Africa Cape onshore,onshore,40.0,2.0,47.69230769230769,2.0,2.0,32.55813953488372,1.0,34.090909090909086,1.0,3,4.0,7.0,True
+south_india_tamil_nadu_onshore,South India / Tamil Nadu-Karnataka onshore,onshore,10.76923076923077,0.0,16.923076923076923,0.0,0.0,65.11627906976744,3.0,59.09090909090909,2.0,3,5.0,8.0,True
+south_korea_offshore,South Korea offshore,offshore,75.38461538461539,3.0,73.84615384615385,3.0,3.0,30.76923076923077,1.0,63.1578947368421,3.0,3,7.0,10.0,True
+south_texas_ne_mexico_onshore,South Texas-NE Mexico onshore,onshore,27.692307692307693,1.0,10.76923076923077,0.0,1.0,53.48837209302325,2.0,6.8181818181818175,0.0,2,3.0,5.0,True
+southern_brazil_uruguay_onshore,Southern Brazil-Uruguay onshore,onshore,43.07692307692308,2.0,12.307692307692308,0.0,1.0,30.23255813953488,1.0,25.0,1.0,3,3.0,6.0,True
+southern_italy_onshore,Southern Italy onshore,onshore,29.230769230769234,1.0,33.84615384615385,1.0,1.0,37.2093023255814,1.0,9.090909090909092,0.0,2,2.0,4.0,True
+taiwan_strait_offshore,Taiwan Strait offshore,offshore,87.6923076923077,4.0,90.76923076923077,4.0,4.0,84.61538461538461,4.0,84.21052631578947,4.0,3,12.0,15.0,True
+tehachapi_mojave_onshore,Tehachapi–Mojave onshore,onshore,61.53846153846154,3.0,72.3076923076923,3.0,3.0,27.906976744186046,1.0,0.0,0.0,3,4.0,7.0,True
+tehuantepec_oaxaca_onshore,Tehuantepec/Oaxaca onshore,onshore,24.615384615384617,1.0,60.0,3.0,2.0,23.25581395348837,1.0,2.272727272727273,0.0,2,3.0,5.0,True
+turkiye_aegean_w_anatolia_onshore,Türkiye Aegean-Western Anatolia onshore,onshore,20.0,1.0,30.76923076923077,1.0,1.0,51.162790697674424,2.0,13.636363636363635,0.0,3,3.0,6.0,True
+us_east_coast_offshore,US East Coast offshore,offshore,90.76923076923077,4.0,84.61538461538461,4.0,4.0,23.076923076923077,1.0,68.42105263157895,3.0,3,8.0,11.0,True
+us_great_plains,US Great Plains,onshore,70.76923076923077,3.0,56.92307692307692,2.0,3.0,95.34883720930233,4.0,56.81818181818182,2.0,2,9.0,11.0,True
+us_gulf_offshore,US Gulf offshore,offshore,56.92307692307692,2.0,3.076923076923077,0.0,1.0,0.0,0.0,0.0,0.0,0,1.0,1.0,True
+us_west_coast_offshore,US West Coast offshore,offshore,86.15384615384616,4.0,89.23076923076924,4.0,4.0,0.0,0.0,31.57894736842105,1.0,3,5.0,8.0,True
+vietnam_offshore,Vietnam offshore,offshore,69.23076923076923,3.0,66.15384615384615,3.0,3.0,46.15384615384615,2.0,21.052631578947366,1.0,3,6.0,9.0,True
+visayas_onshore,Visayas onshore,onshore,7.6923076923076925,0.0,21.53846153846154,1.0,1.0,6.976744186046512,0.0,31.818181818181817,1.0,3,2.0,5.0,True
+w_iberia_atlantic_offshore,W Iberia Atlantic offshore,offshore,83.07692307692308,4.0,86.15384615384616,4.0,4.0,7.6923076923076925,0.0,52.63157894736842,2.0,3,6.0,9.0,True
+west_india_rajasthan_gujarat_onshore,West India Rajasthan/Gujarat onshore,onshore,9.230769230769232,0.0,1.5384615384615385,0.0,0.0,69.76744186046511,3.0,47.72727272727273,2.0,3,5.0,8.0,True
+west_sohag_upper_egypt_onshore,West Sohag / Upper Egypt onshore,onshore,52.307692307692314,2.0,26.153846153846157,1.0,2.0,0.0,0.0,61.36363636363637,3.0,3,5.0,8.0,True
+western_australia_onshore,Western Australia onshore,onshore,41.53846153846154,2.0,4.615384615384616,0.0,1.0,16.27906976744186,0.0,81.81818181818183,4.0,3,5.0,8.0,True
+xinjiang_gansu_western_china_onshore,Xinjiang-Gansu / Western China onshore,onshore,49.23076923076923,2.0,55.38461538461539,2.0,2.0,97.67441860465115,4.0,100.0,4.0,3,10.0,13.0,True
+yunnan_sichuan_highlands_onshore,Yunnan-Sichuan highlands onshore,onshore,6.153846153846154,0.0,36.92307692307693,1.0,1.0,74.4186046511628,3.0,43.18181818181818,2.0,2,6.0,8.0,True

@@ -1,0 +1,26 @@
+name: gweh
+channels:
+  - conda-forge
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - geopandas[version='>=1.0']
+  - pyproj[version='>=3.6']
+  - rasterio[version='>=1.3']
+  - openpyxl[version='>=3.1']
+  - netcdf4[version='>=1.6']
+  - pip
+  - xarray[version='>=2024.1']
+  - pytest[version='>=8']
+  - pyyaml[version='>=6']
+  - pyogrio[version='>=0.9']
+  - python[version='>=3.11']
+  - shapely[version='>=2.0']
+  - numpy[version='>=1.26']
+  - pyarrow[version='>=15']
+  - pandas[version='>=2.2']
+  - pyflakes[version='>=3']
+  - fiona
+  - tabulate
+  - geographiclib
+  - h5py

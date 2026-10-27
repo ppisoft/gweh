@@ -1,0 +1,4 @@
+phase_id,source_surface,verified_surface,evidence_url,reason
+G100000925222,offshore,onshore,https://www.windparknoordoostpolder.nl/en/wind-farm/facts-figures/,NOP Agrowind is the onshore turbine component; GEM GWPT source lists offshore hard mount
+G100000919945,offshore,inland_water,https://www.windparkfryslan.nl/the-wind-farm/,Windpark Fryslan turbines are in IJsselmeer inland freshwater; analytical component follows declared inland-water policy
+G100000927753,unknown,onshore,https://www.jbic.go.jp/en/information/press/press-2025/press_00151.html,Yanbu wind farm 700 MW AlMadinah matches the frozen GEM phase identity; JBIC confirms physical onshore installation. Approximate source coordinates are explicitly ineligible to anchor geometry.

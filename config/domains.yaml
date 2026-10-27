@@ -1,0 +1,724 @@
+domains:
+  north_sea_offshore:
+    boxes:
+    - - -2.5
+      - 50.8
+      - 11.0
+      - 56.0
+    - - -5.0
+      - 56.0
+      - 11.0
+      - 62.0
+    eez_countries:
+    - United Kingdom
+    - Norway
+    - Denmark
+    - Germany
+    - Netherlands
+    - Belgium
+  baltic_offshore:
+    boxes:
+    - - 9.0
+      - 53.0
+      - 31.0
+      - 66.0
+    eez_countries:
+    - Denmark
+    - Germany
+    - Poland
+    - Sweden
+    - Finland
+    - Estonia
+    - Latvia
+    - Lithuania
+    - Aland
+    coastal_band:
+      offshore_km: 200.0
+  irish_celtic_seas_offshore:
+    boxes:
+    - - -12.5
+      - 48.0
+      - -4.0
+      - 53.2
+    - - -7.0
+      - 51.0
+      - -2.5
+      - 56.0
+    eez_countries:
+    - Ireland
+    - United Kingdom
+    coastal_band:
+      offshore_km: 200.0
+  norwegian_barents_offshore:
+    boxes:
+    - - -2.0
+      - 61.5
+      - 15.0
+      - 72.0
+    - - 15.0
+      - 68.0
+      - 42.0
+      - 76.0
+    eez_countries:
+    - Norway
+    coastal_band:
+      offshore_km: 200.0
+  fennoscandia_north_onshore:
+    boxes:
+    - - 10.0
+      - 61.0
+      - 32.0
+      - 71.0
+    countries:
+    - Norway
+    - Sweden
+    - Finland
+  iberia_onshore:
+    boxes:
+    - - -10.5
+      - 35.5
+      - 4.5
+      - 44.5
+    countries:
+    - Spain
+    - Portugal
+  w_iberia_atlantic_offshore:
+    boxes:
+    - - -15.5
+      - 35.5
+      - -6.5
+      - 45.0
+    eez_countries:
+    - Spain
+    - Portugal
+    coastal_band:
+      offshore_km: 200.0
+  north_central_europe_onshore:
+    boxes:
+    - - 2.0
+      - 47.0
+      - 20.0
+      - 55.5
+    countries:
+    - Germany
+    - Poland
+    - Netherlands
+    - Belgium
+  france_onshore_wind_belt:
+    boxes:
+    - - -5.5
+      - 42.5
+      - 8.5
+      - 51.5
+    countries:
+    - France
+  turkiye_aegean_w_anatolia_onshore:
+    boxes:
+    - - 25.0
+      - 35.5
+      - 34.0
+      - 42.0
+    countries:
+    - Türkiye
+    - Turkey
+  us_great_plains:
+    boxes:
+    - - -109.0
+      - 31.0
+      - -92.0
+      - 49.5
+    countries:
+    - United States
+  canadian_prairies:
+    boxes:
+    - - -116.0
+      - 48.0
+      - -95.0
+      - 57.0
+    countries:
+    - Canada
+  us_east_coast_offshore:
+    boxes:
+    - - -82.0
+      - 24.0
+      - -64.0
+      - 46.0
+    eez_countries:
+    - United States
+    coastal_band:
+      offshore_km: 200.0
+  us_gulf_offshore:
+    boxes:
+    - - -99.0
+      - 22.0
+      - -79.0
+      - 31.5
+    eez_countries:
+    - United States
+    - Mexico
+    coastal_band:
+      offshore_km: 200.0
+  us_west_coast_offshore:
+    boxes:
+    - - -128.0
+      - 31.0
+      - -116.0
+      - 50.0
+    eez_countries:
+    - United States
+    coastal_band:
+      offshore_km: 200.0
+  tehuantepec_oaxaca_onshore:
+    boxes:
+    - - -97.0
+      - 14.5
+      - -92.5
+      - 18.5
+    countries:
+    - Mexico
+  ne_brazil_onshore:
+    boxes:
+    - - -44.0
+      - -16.0
+      - -33.0
+      - -1.0
+    countries:
+    - Brazil
+  ne_brazil_offshore:
+    boxes:
+    - - -45.0
+      - -16.0
+      - -32.0
+      - -0.5
+    eez_countries:
+    - Brazil
+    coastal_band:
+      offshore_km: 200.0
+  patagonia_onshore:
+    boxes:
+    - - -75.0
+      - -56.0
+      - -61.0
+      - -37.0
+    countries:
+    - Argentina
+    - Chile
+  southern_brazil_uruguay_onshore:
+    boxes:
+    - - -59.0
+      - -36.0
+      - -47.0
+      - -24.0
+    countries:
+    - Brazil
+    - Uruguay
+  east_china_onshore:
+    boxes:
+    - - 115.0
+      - 22.0
+      - 122.5
+      - 39.0
+    countries:
+    - China
+    coastal_band:
+      onshore_km: 450.0
+  east_china_offshore:
+    boxes:
+    - - 117.0
+      - 21.0
+      - 126.0
+      - 40.0
+    eez_countries:
+    - China
+    coastal_band:
+      offshore_km: 200.0
+  inner_mongolia_north_china_onshore:
+    boxes:
+    - - 100.0
+      - 38.0
+      - 120.5
+      - 50.5
+    countries:
+    - China
+  xinjiang_gansu_western_china_onshore:
+    boxes:
+    - - 74.0
+      - 33.0
+      - 105.0
+      - 49.0
+    countries:
+    - China
+  west_india_rajasthan_gujarat_onshore:
+    boxes:
+    - - 67.0
+      - 19.0
+      - 79.0
+      - 31.5
+    countries:
+    - India
+  south_india_tamil_nadu_onshore:
+    boxes:
+    - - 73.0
+      - 7.0
+      - 81.5
+      - 17.7
+    countries:
+    - India
+  taiwan_strait_offshore:
+    boxes:
+    - - 115.5
+      - 21.5
+      - 123.0
+      - 27.5
+    eez_countries:
+    - Taiwan
+    - China
+    coastal_band:
+      offshore_km: 200.0
+  japan_offshore:
+    boxes:
+    - - 127.0
+      - 29.0
+      - 147.0
+      - 46.5
+    eez_countries:
+    - Japan
+    coastal_band:
+      offshore_km: 200.0
+  south_korea_offshore:
+    boxes:
+    - - 123.0
+      - 31.0
+      - 133.0
+      - 39.5
+    eez_countries:
+    - South Korea
+    coastal_band:
+      offshore_km: 200.0
+  vietnam_offshore:
+    boxes:
+    - - 104.0
+      - 7.0
+      - 114.0
+      - 23.0
+    eez_countries:
+    - Vietnam
+    coastal_band:
+      offshore_km: 200.0
+  philippines_priority_offshore:
+    boxes:
+    - - 116.0
+      - 4.0
+      - 128.5
+      - 21.0
+    eez_countries:
+    - Philippines
+    coastal_band:
+      offshore_km: 200.0
+  kazakhstan_central_asian_steppe_onshore:
+    boxes:
+    - - 46.0
+      - 40.0
+      - 82.0
+      - 55.0
+    countries:
+    - Kazakhstan
+    - Uzbekistan
+  south_africa_cape_onshore:
+    boxes:
+    - - 15.0
+      - -36.0
+      - 30.0
+      - -29.0
+    countries:
+    - South Africa
+  n_africa_atlantic_mixed:
+    boxes:
+    - - -18.5
+      - 19.0
+      - -5.0
+      - 36.5
+    countries:
+    - Morocco
+    - Western Sahara
+    - Mauritania
+    eez_countries:
+    - Morocco
+    - Western Sahara
+    - Mauritania
+    - Canary Islands
+    coastal_band:
+      onshore_km: 350.0
+      offshore_km: 200.0
+  egypt_suez_mixed:
+    boxes:
+    - - 31.5
+      - 25.0
+      - 35.5
+      - 30.5
+    countries:
+    - Egypt
+    eez_countries:
+    - Egypt
+    coastal_band:
+      onshore_km: 180.0
+      offshore_km: 150.0
+  oman_arabian_sea_mixed:
+    boxes:
+    - - 51.0
+      - 15.0
+      - 60.5
+      - 26.0
+    countries:
+    - Oman
+    eez_countries:
+    - Oman
+    coastal_band:
+      offshore_km: 200.0
+  saudi_red_sea_neom_mixed:
+    boxes:
+    - - 34.5
+      - 20.0
+      - 40.0
+      - 29.5
+    countries:
+    - Saudi Arabia
+    eez_countries:
+    - Saudi Arabia
+    coastal_band:
+      onshore_km: 250.0
+      offshore_km: 200.0
+  horn_of_africa_onshore:
+    boxes:
+    - - 39.0
+      - 3.0
+      - 50.5
+      - 15.0
+    countries:
+    - Djibouti
+    - Ethiopia
+    - Eritrea
+    - Somalia
+    - Kenya
+    coastal_band:
+      onshore_km: 300.0
+  namibia_coast_mixed:
+    boxes:
+    - - 7.0
+      - -30.0
+      - 18.0
+      - -16.0
+    countries:
+    - Namibia
+    eez_countries:
+    - Namibia
+    coastal_band:
+      offshore_km: 200.0
+  se_australia_onshore:
+    boxes:
+    - - 137.0
+      - -40.0
+      - 154.0
+      - -28.0
+    countries:
+    - Australia
+  se_australia_offshore:
+    boxes:
+    - - 137.0
+      - -44.0
+      - 155.0
+      - -28.0
+    eez_countries:
+    - Australia
+    coastal_band:
+      offshore_km: 200.0
+  western_australia_onshore:
+    boxes:
+    - - 112.0
+      - -36.0
+      - 126.0
+      - -19.0
+    countries:
+    - Australia
+  caribbean_colombia_venezuela_onshore:
+    boxes:
+    - - -76.0
+      - 8.5
+      - -66.0
+      - 14.0
+    countries:
+    - Colombia
+    - Venezuela
+    coastal_band:
+      onshore_km: 300.0
+  british_isles_onshore:
+    boxes:
+    - - -11.0
+      - 49.0
+      - 2.0
+      - 60.0
+    countries:
+    - United Kingdom
+    - Ireland
+  ne_china_manchuria_onshore:
+    boxes:
+    - - 120.5
+      - 39.0
+      - 135.0
+      - 53.0
+    countries:
+    - China
+  se_europe_balkans_onshore:
+    boxes:
+    - - 13.0
+      - 36.0
+      - 30.0
+      - 48.0
+    countries:
+    - Albania
+    - Bosnia and Herzegovina
+    - Bulgaria
+    - Croatia
+    - Greece
+    - Kosovo
+    - Montenegro
+    - North Macedonia
+    - Romania
+    - Serbia
+    - Slovenia
+    - Hungary
+  central_med_offshore:
+    boxes:
+    - - 6.0
+      - 34.0
+      - 20.0
+      - 46.0
+    eez_countries:
+    - Italy
+    coastal_band:
+      offshore_km: 200.0
+  guangdong_offshore:
+    boxes:
+    - - 108.8
+      - 18.3
+      - 114.9
+      - 23.9
+    eez_countries:
+    - China
+    coastal_band:
+      offshore_km: 200.0
+  ningxia_shaanxi_onshore:
+    boxes:
+    - - 103.5
+      - 34.9
+      - 110.6
+      - 39.7
+    countries:
+    - China
+  west_sohag_upper_egypt_onshore:
+    boxes:
+    - - 30.4
+      - 25.8
+      - 32.2
+      - 27.6
+    countries:
+    - Egypt
+  illinois_indiana_onshore:
+    boxes:
+    - - -92.5
+      - 37.0
+      - -84.5
+      - 43.5
+    countries:
+    - United States
+    admin1:
+    - country: United States
+      names:
+      - Illinois
+      - Indiana
+  south_texas_ne_mexico_onshore:
+    boxes:
+    - - -101.5
+      - 24.0
+      - -96.0
+      - 30.5
+    countries:
+    - United States
+    - Mexico
+    admin1:
+    - country: United States
+      names:
+      - Texas
+    - country: Mexico
+      names:
+      - Nuevo León
+      - Tamaulipas
+  columbia_gorge_pnw_onshore:
+    boxes:
+    - - -123.5
+      - 43.5
+      - -116.0
+      - 49.5
+    countries:
+    - United States
+    admin1:
+    - country: United States
+      names:
+      - Oregon
+      - Washington
+  michigan_ontario_great_lakes_onshore:
+    boxes:
+    - - -87.5
+      - 41.0
+      - -78.0
+      - 47.5
+    countries:
+    - United States
+    - Canada
+    admin1:
+    - country: United States
+      names:
+      - Michigan
+    - country: Canada
+      names:
+      - Ontario
+  southern_italy_onshore:
+    boxes:
+    - - 12.5
+      - 37.0
+      - 19.0
+      - 43.0
+    countries:
+    - Italy
+    admin1:
+    - country: Italy
+      names:
+      - Puglia
+      - Campania
+      - Basilicata
+      - Calabria
+      - Molise
+  english_channel_offshore:
+    boxes:
+    - - -5.5
+      - 47.0
+      - 2.5
+      - 52.0
+    eez_countries:
+    - United Kingdom
+    - France
+    coastal_band:
+      offshore_km: 200.0
+  central_china_henan_hubei_shanxi_onshore:
+    boxes:
+    - - 109.0
+      - 28.5
+      - 116.5
+      - 39.5
+    countries:
+    - China
+    admin1:
+    - country: China
+      names:
+      - Henan
+      - Hubei
+      - Shanxi
+  yunnan_sichuan_highlands_onshore:
+    boxes:
+    - - 98.0
+      - 22.0
+      - 106.5
+      - 30.5
+    countries:
+    - China
+    admin1:
+    - country: China
+      names:
+      - Yunnan
+      - Sichuan
+  guizhou_onshore:
+    boxes:
+    - - 103.0
+      - 24.0
+      - 110.0
+      - 30.0
+    countries:
+    - China
+    admin1:
+    - country: China
+      names:
+      - Guizhou
+  hunan_onshore:
+    boxes:
+    - - 108.0
+      - 23.5
+      - 115.5
+      - 30.5
+    countries:
+    - China
+    admin1:
+    - country: China
+      names:
+      - Hunan
+  luzon_onshore:
+    boxes:
+    - - 119.0
+      - 13.0
+      - 124.0
+      - 18.8
+    countries:
+    - Philippines
+    admin1:
+    - country: Philippines
+      names:
+      - Quezon
+      - Nueva Ecija
+      - Camarines Norte
+      - Laguna
+      - Pangasinan
+      - Rizal
+      - Bulacan
+      - Bataan
+      - Batangas
+      - Cavite
+      - Zambales
+      - Tarlac
+  guangxi_onshore:
+    boxes:
+    - - 104.5
+      - 20.0
+      - 113.5
+      - 27.5
+    countries:
+    - China
+    admin1:
+    - country: China
+      names:
+      - Guangxi
+  visayas_onshore:
+    boxes:
+    - - 119.5
+      - 8.0
+      - 126.0
+      - 13.5
+    countries:
+    - Philippines
+    admin1:
+    - country: Philippines
+      names:
+      - Negros Occidental
+      - Negros Oriental
+      - Aklan
+      - Iloilo
+      - Guimaras
+      - Bohol
+      - Cebu
+      - Antique
+  tehachapi_mojave_onshore:
+    boxes:
+    - [-118.80, 34.60, -117.90, 35.70]
+    countries: [United States]
+  antofagasta_taltal_onshore:
+    boxes:
+    - [-70.18, -25.12, -69.54, -24.66]
+    countries: [Chile]

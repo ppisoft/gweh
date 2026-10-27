@@ -1,0 +1,20 @@
+# Independent MERRA-2 corroboration protocol. No fixed regional universe.
+blind_seed: 20261018  # Seed used for the published outcome-blind polygon-to-ID mapping.
+period:
+  start: '2008-01-01'
+  end: '2017-12-31'
+hourly_samples_per_daily_file: 24
+required_variables: [U50M, V50M, PS, T2M, QV2M]
+optional_variables: [U10M, V10M]
+spatial_membership: merra_cell_centre_within_region_polygon
+spatial_weighting: cos_latitude
+wind_speed_50m: sqrt(U50M**2 + V50M**2)
+density_proxy: PS / (287.05 * T2M * (1 + 0.61 * QV2M))
+wind_power_density_50m: 0.5 * density_proxy * wind_speed_50m**3
+primary_comparison:
+  merra: mean_wpd50_proxy
+  gwa4: WPD100_mean_aw
+  statistic: spearman_rank_correlation
+sample: all_candidates_in_supplied_geometry
+zero_merra_centre_policy: report_missing_exclude_from_pairwise_statistic
+interpretation: rank_correspondence_not_absolute_50m_to_100m_calibration

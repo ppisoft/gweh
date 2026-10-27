@@ -1,0 +1,188 @@
+table,field,definition,unit_or_domain
+GWEH_grid_*.nc,*,Variables and global metadata are described by the self-describing CF NetCDF attributes,per-variable
+catalogue,D_score,Operating-capacity evidence score,0-4
+catalogue,H_score,"Sum of R, D, P and S scores",0-16
+catalogue,H_without_S,"Sum of R, D and P scores",0-12
+catalogue,P_score,Pipeline-capacity evidence score,0-4
+catalogue,R_score,Wind-resource score,0-4
+catalogue,S_score,Strategic evidence score,0-4
+catalogue,absolute_market_pass,Whether the absolute-market selection pathway is satisfied,boolean
+catalogue,candidate_id,Stable candidate identifier,1
+catalogue,climate_analysis_eligible,Selected and represented by at least two CESM reference grid centres,boolean
+catalogue,climate_grid_center_count,Number of strict-interior CESM reference grid centres within the selected region,count
+catalogue,climate_use_tier,Primary climate or low-N/narrow extension/exclusion tier,1
+catalogue,display_order,Display ordering from candidate registry,1
+catalogue,evidence_selection_status,Selected or not selected based on evidence selection rules,1
+catalogue,macroregion,Macroregional grouping,1
+catalogue,market_maturity,"Core, emerging, or prospective market category",1
+catalogue,maturity_basis,Rule basis used to derive market maturity,1
+catalogue,primary_climate_panel,Selected and represented by at least twelve CESM reference grid centres,boolean
+catalogue,primary_pass,Whether primary selection thresholds are satisfied,boolean
+catalogue,region_name,Descriptive region name,1
+catalogue,selection_pathway,"Primary-resource, primary-market, absolute-market, or not-selected pathway",1
+catalogue,surface_type,Nominal candidate onshore/offshore/mixed class,1
+geometries_denominators,candidate_id,Stable candidate ID for evidence denominator,1
+geometries_denominators,exclusive_area_km2,Geodesic area of the denominators layer candidate geometry after mutual-exclusion partition,km2
+geometries_denominators,geometry,Published exclusive EPSG:4326 MultiPolygon geometry for denominators; regions and denominators are partitioned separately and same-ID polygons need not be nested,EPSG:4326 MultiPolygon
+geometries_denominators,prepartition_area_km2,Geodesic area of the denominators layer candidate geometry before mutual-exclusion partition,km2
+geometries_denominators,region_name,Descriptive GWEH region name,1
+geometries_denominators,surface_type,Nominal surface grouping,1
+geometries_regions,candidate_id,Stable candidate ID of exclusive polygon,1
+geometries_regions,exclusive_area_km2,Geodesic area of the regions layer candidate geometry after mutual-exclusion partition,km2
+geometries_regions,geometry,Published exclusive EPSG:4326 MultiPolygon geometry for regions; regions and denominators are partitioned separately and same-ID polygons need not be nested,EPSG:4326 MultiPolygon
+geometries_regions,macroregion,Geographical macroregion,1
+geometries_regions,prepartition_area_km2,Geodesic area of the regions layer candidate geometry before mutual-exclusion partition,km2
+geometries_regions,region_name,Descriptive GWEH region name,1
+geometries_regions,surface_type,Nominal surface grouping,1
+grid_lookup,analysis_use_tier,Primary low-N or narrow climate-use tier,1
+grid_lookup,candidate_id,Stable candidate ID associated with CF grid code,1
+grid_lookup,cell_count,Number of strictly interior CESM 192 x 288 grid cells,count
+grid_lookup,grid_id,Integer CF grid code assigned to an eligible candidate,1
+grid_lookup,market_maturity,CORE EMERGING or PROSPECTIVE market evidence class,1
+grid_lookup,region_name,Descriptive region name,1
+grid_lookup,surface_type,Onshore offshore or mixed analytical candidate type,1
+market_components,candidate_id,Stable candidate identifier,1
+market_components,candidate_surface_type,Nominal candidate surface type,1
+market_components,market_component,Onshore or offshore market ranking population,1
+market_components,n_active_phases_component,Count represented by n active phases component,count
+market_components,operating_mw_component,Operating mw component,MW
+market_components,pipeline_mw_component,Pipeline mw component,MW
+market_components,region_name,Descriptive region name,1
+metadata/candidate_nomination_register.csv,candidate_id,Stable nominated candidate identifier,text
+metadata/candidate_nomination_register.csv,nomination_basis,Compact documented nomination/review context; not a delineation criterion,text
+metadata/gwpt_source_overrides.csv,effective_value,Replacement value used in the frozen GWEH scenario,source units
+metadata/gwpt_source_overrides.csv,expected_original,Expected original cell value in the source workbook,source units
+metadata/gwpt_source_overrides.csv,field,Workbook column subject to the documented correction,GWPT field name
+metadata/gwpt_source_overrides.csv,ontology,Meaning of the replacement capacity or project status,text
+metadata/gwpt_source_overrides.csv,phase_id,GWPT phase identifier of a corrected source entry,GWPT phase ID
+metadata/gwpt_source_overrides.csv,reason,Evidence-based explanation for the exact source correction,text
+metadata/gwpt_source_overrides.csv,source_alias,Reference identifier for the documented source of the correction,text
+metadata/gwpt_source_overrides.csv,source_date,Date or vintage of the independent source supporting the correction,date/text
+metadata/source_register.csv,derived_product_scope,Scope of published derived GWEH results and source-specific redistribution caveats; not a third-party licence grant,text
+metadata/source_register.csv,persistent_identifier,DOI or other persistent record identifier when available,text/blank
+metadata/source_register.csv,publisher,Original publisher or responsible organization when documented,text/blank
+metadata/source_register.csv,rights_or_license,Recorded provider conditions; not independent authorization to redistribute derivatives,text
+metadata/source_register.csv,role,"Use of source in construction, nomination or external corroboration",text
+metadata/source_register.csv,source_class,Class of primary/validation evidence source,text
+metadata/source_register.csv,source_id,Stable identifier of a cited document or upstream dataset within its evidence namespace,text
+metadata/source_register.csv,title,Bibliographic source title when confirmed in original metadata; blank is not inferred,text/blank
+metadata/source_register.csv,url,Source landing page or official download URL,URL
+metadata/source_register.csv,version_or_snapshot,Version or data snapshot of the upstream dataset,text
+metadata/strategic_s/candidate_source_evidence.csv,candidate_id,Stable current region identifier for joining GWEH products,text
+metadata/strategic_s/candidate_source_evidence.csv,parameter,Strategic review component assessed for candidate,S1–S4/other archived review parameter
+metadata/strategic_s/candidate_source_evidence.csv,parameter_value,"Value assigned to parameter by historical assessment, not recomputed by this register",source-defined numeric/text
+metadata/strategic_s/candidate_source_evidence.csv,source_id,Stable identifier of a cited document or upstream dataset within its evidence namespace,text
+metadata/strategic_s/source_database.csv,publication_date,Source-reported date or temporal provenance in heterogeneous precision; may be a year month full date or descriptive note; blank if unavailable (not normalized ISO date),text/blank
+metadata/strategic_s/source_database.csv,source_id,Stable identifier of a cited document or upstream dataset within its evidence namespace,text
+metadata/strategic_s/source_database.csv,title,Bibliographic source title when confirmed in original metadata; blank is not inferred,text/blank
+metadata/strategic_s/source_database.csv,url_exact,Exact source URL preserved in the historical or current evidence register,URL
+metadata/strategic_s/strategic_assessment.csv,S1,Primary-source strategic commitment component; scoring rubric is in strategic_score_rules.yaml,integer 0-2
+metadata/strategic_s/strategic_assessment.csv,S2,Primary-source implementation-strength component; scoring rubric is in strategic_score_rules.yaml,integer 0-2
+metadata/strategic_s/strategic_assessment.csv,S3,Primary-source geographic coverage component; scoring rubric is in strategic_score_rules.yaml,integer 0-2
+metadata/strategic_s/strategic_assessment.csv,S4,Primary-source current implementation evidence component; scoring rubric is in strategic_score_rules.yaml,integer 0-1
+metadata/strategic_s/strategic_assessment.csv,candidate_id,Stable GWEH candidate identifier linking assessment to catalogue and evidence links,text
+metadata/strategic_s/strategic_assessment.csv,exceptional_integrated_programme,Whether the evidence supports the exceptional integrated-programme criterion for S=4,boolean
+metadata/strategic_s/strategic_assessment.csv,negative_policy,Policy restriction class used by the Strategic-S score caps,NONE/MATERIAL_CONFLICT/FULL_BLOCK
+metadata/strategic_s/strategic_assessment.csv,region_name,Descriptive label of assessed wind-energy system,text
+metadata/strategic_s/strategic_assessment.csv,viable_alternative,Whether an evidenced viable alternative changes application of the negative-policy cap,boolean
+metadata/strategic_s/strategic_score_rules.yaml,*,Machine-readable Strategic-S component definitions; reference and strict ordered mappings; policy caps and ordinal sensitivity rules,YAML 1.2
+region_metrics,A300_km2,Evidence-region area with WPD100 above the 300 W m-2 threshold,km2
+region_metrics,A500_km2,Evidence-region area with WPD100 above the 500 W m-2 threshold,km2
+region_metrics,F300,A300_km2 divided by wpd_valid_area_km2: fraction of valid GWA4 WPD raster area above the 300 W m-2 threshold (not fraction of all polygon area),0-1
+region_metrics,F500,A500_km2 divided by wpd_valid_area_km2: fraction of valid GWA4 WPD raster area above the 500 W m-2 threshold (not fraction of all polygon area),0-1
+region_metrics,WPD100_mean_aw,Area-weighted mean wind power density at 100 m,W m-2
+region_metrics,WPD100_median_aw,Area-weighted median wind power density at 100 m,W m-2
+region_metrics,WPD100_p75_aw,Area-weighted 75th percentile wind power density at 100 m,W m-2
+region_metrics,candidate_id,Stable candidate identifier,1
+region_metrics,coverage_defined,Whether a meaningful coverage fraction is available,boolean
+region_metrics,coverage_denominator_mw,Active capacity in the coverage denominator,MW
+region_metrics,coverage_inside_mw,Active capacity inside the strict region geometry,MW
+region_metrics,coverage_missing_reason,"Reason why coverage is unavailable, when applicable",1
+region_metrics,coverage_outside_mw,Denominator capacity outside strict region geometry,MW
+region_metrics,coverage_strict_fraction,Fraction of denominator capacity strictly inside final polygon,1
+region_metrics,coverage_within_tolerance_fraction,Fraction of denominator capacity within defined spatial tolerance,1
+region_metrics,coverage_within_tolerance_mw,Denominator capacity within the allowed spatial tolerance,MW
+region_metrics,evidence_area_km2,Area of final regional evidence geometry,km2
+region_metrics,evidence_missing_reason,Reason why resource/project evidence is unavailable,1
+region_metrics,macroregion,Macroregional grouping,1
+region_metrics,n_denominator_phases,Count represented by n denominator phases,count
+region_metrics,n_inside_phases,Count represented by n inside phases,count
+region_metrics,n_within_tolerance_phases,Count represented by n within tolerance phases,count
+region_metrics,operating_mw_strict_polygon,Operating mw strict polygon,MW
+region_metrics,operating_mw_total,Operating mw total,MW
+region_metrics,operating_mw_within_tolerance,Operating mw within tolerance,MW
+region_metrics,pipeline_mw_strict_polygon,Pipeline mw strict polygon,MW
+region_metrics,pipeline_mw_total,Pipeline mw total,MW
+region_metrics,pipeline_mw_within_tolerance,Pipeline mw within tolerance,MW
+region_metrics,project_WPD100_capacity_weighted,Capacity-weighted project WPD100,W m-2
+region_metrics,project_WPD100_median,Median project WPD100 observation,W m-2
+region_metrics,project_resource_n,Number of project-phase WPD observations contributing to project resource evidence,count
+region_metrics,project_wpd_defined,Whether project wind-resource evidence is defined,boolean
+region_metrics,region_name,Descriptive region name,1
+region_metrics,resource_evidence_defined,Whether resource evidence is defined,boolean
+region_metrics,surface_type,Nominal candidate onshore/offshore/mixed class,1
+region_metrics,wpd_valid_area_km2,Area supported by valid WPD raster cells,km2
+scores,D_peer_percentile,Operating capacity percentile within surface-specific positive-value peers,percent
+scores,D_score,Operating-capacity evidence score,0-4
+scores,H_score,"Sum of R, D, P and S scores",0-16
+scores,H_without_S,"Sum of R, D and P scores",0-12
+scores,P_peer_percentile,Pipeline capacity percentile within surface-specific positive-value peers,percent
+scores,P_score,Pipeline-capacity evidence score,0-4
+scores,RF_percentile,All-candidate midrank percentile for F500,percent
+scores,RF_score,F500 percentile-based component of R,0-4
+scores,RQ_percentile,All-candidate midrank percentile for WPD100 median,percent
+scores,RQ_score,WPD100 median percentile-based component of R,0-4
+scores,R_score,Wind-resource score,0-4
+scores,S_score,Strategic evidence score,0-4
+scores,candidate_id,Stable candidate identifier,1
+scores,region_name,Descriptive region name,1
+scores,score_complete,All four score components are available,boolean
+scores,surface_type,Nominal candidate onshore/offshore/mixed class,1
+validation/market/V3_irena_gwpt_YEAR.csv,country_key,Normalized country code/name key for independent market comparison,text
+validation/market/V3_irena_gwpt_YEAR.csv,gwpt_mw,Aggregated GWPT capacity of matched positive country-technology pair (IRENA absolute MW withheld),MW
+validation/market/V3_irena_gwpt_YEAR.csv,gwpt_rank,Average-tie ascending rank of GWPT MW among matched positive pairs,rank
+validation/market/V3_irena_gwpt_YEAR.csv,irena_rank,Average-tie ascending ordinal rank of IRENASTAT MW among matched positive pairs (absolute capacity withheld),rank
+validation/market/V3_irena_gwpt_YEAR.csv,surface,Onshore or offshore wind technology class for IRENA-GWPT comparison,onshore/offshore
+validation/merra/V4_merra_candidate_values.csv,WPD100_mean_aw,Independent GWA4 area-weighted mean wind power density at 100m,W m-2
+validation/merra/V4_merra_candidate_values.csv,WPD100_median_aw,Independent GWA4 area-weighted median wind power density at 100m,W m-2
+validation/merra/V4_merra_candidate_values.csv,candidate_id,Stable current region identifier for joining GWEH products,text
+validation/merra/V4_merra_candidate_values.csv,climate_analysis_eligible,Eligibility of candidate for model-grid climate analysis,boolean
+validation/merra/V4_merra_candidate_values.csv,evidence_selection_status,Construction evidence selection flag; independent of validation outcome,text
+validation/merra/V4_merra_candidate_values.csv,mean_wpd100_powerlaw_proxy,"Power-law extrapolation sensitivity, not canonical MERRA 100m product",W m-2
+validation/merra/V4_merra_candidate_values.csv,mean_wpd50_proxy,"MERRA-2 mean of 0.5*rho*WS50^3 proxy, computed on hourly data",W m-2
+validation/merra/V4_merra_candidate_values.csv,mean_ws10,Area-weighted time-mean MERRA-2 10m wind speed,m s-1
+validation/merra/V4_merra_candidate_values.csv,mean_ws50,Area-weighted time-mean MERRA-2 50m wind speed,m s-1
+validation/merra/V4_merra_candidate_values.csv,merra_center_cells,Number of MERRA-2 cell centres located inside regional polygon,count
+validation/merra/V4_merra_candidate_values.csv,merra_covered,Whether a region contains a MERRA cell centre,boolean
+validation/merra/V4_merra_candidate_values.csv,primary_climate_panel,Membership in primary climate analysis subset,boolean
+validation/merra/V4_merra_candidate_values.csv,validation_id,"Blind MERRA regional identity, separate from published candidate label",text
+validation/merra/V4_merra_yearly.csv,candidate_id,Stable current region identifier for joining GWEH products,text
+validation/merra/V4_merra_yearly.csv,days_processed,Count of completed MERRA-2 daily files in calendar year,count
+validation/merra/V4_merra_yearly.csv,mean_wpd50_proxy,"MERRA-2 mean of 0.5*rho*WS50^3 proxy, computed on hourly data",W m-2
+validation/merra/V4_merra_yearly.csv,mean_ws10,Area-weighted time-mean MERRA-2 10m wind speed,m s-1
+validation/merra/V4_merra_yearly.csv,mean_ws50,Area-weighted time-mean MERRA-2 50m wind speed,m s-1
+validation/merra/V4_merra_yearly.csv,merra_center_cells,Number of MERRA-2 cell centres located inside regional polygon,count
+validation/merra/V4_merra_yearly.csv,year,Year of independently aggregated MERRA-2 climatology,calendar year
+validation/merra_provenance/annual/year_YYYY.csv,days_processed,Number of daily MERRA-2 input files successfully accumulated in the year,days
+validation/merra_provenance/annual/year_YYYY.csv,input_signature,"SHA-256 signature of the ordered input file paths relative to the source root, sizes and modification timestamps; used for local resume, not a content hash",sha256
+validation/merra_provenance/annual/year_YYYY.csv,merra_center_cells,Number of MERRA-2 cell centres strictly inside the blinded region,count
+validation/merra_provenance/annual/year_YYYY.csv,time_steps,Number of hourly time steps read across the year,hours
+validation/merra_provenance/annual/year_YYYY.csv,validation_id,Anonymous stable within-run region identifier joining annual values to the blind roster and supervisor mapping,text
+validation/merra_provenance/annual/year_YYYY.csv,wpd50_d,Sum of cosine-latitude weights of valid hourly 50-m WPD samples,weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,wpd50_n,Sum of hourly 0.5*rho*WS50^3 multiplied by cosine-latitude spatial weights,(W m-2) weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,ws10_d,Sum of cosine-latitude weights of valid 10-m wind-speed samples; zero when optional 10-m wind was absent,weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,ws10_n,Sum of valid 10-m wind-speed samples multiplied by cosine-latitude weights when U10M/V10M are supplied,(m s-1) weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,ws50_d,Sum of cosine-latitude weights of valid 50-m wind-speed samples,weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,ws50_n,Sum of 50-m wind-speed samples multiplied by cosine-latitude spatial weights,(m s-1) weighted samples
+validation/merra_provenance/annual/year_YYYY.csv,year,Calendar year for the completed MERRA-2 hourly aggregation,YYYY
+validation/merra_provenance/blind/geometry_fingerprints.csv,validation_id,Anonymous V4 geometry identifier joined to the published supervisor mapping,text
+validation/merra_provenance/blind/geometry_fingerprints.csv,wkb_sha256,SHA-256 of WKB bytes read back from the frozen blind GeoPackage before public packaging,lowercase hexadecimal SHA-256
+validation/merra_provenance/blind/roster.csv,validation_id,Anonymous validation identifier for each blinded Stage05 candidate geometry; key to annual MERRA and supervisor mapping,text
+validation/merra_provenance/supervisor/mapping.csv,candidate_id,Stable current region identifier for joining GWEH products,text
+validation/merra_provenance/supervisor/mapping.csv,validation_id,"Blind MERRA regional identity, separate from published candidate label",text
+validation/spatial/V1_V2_candidate_containment.csv,candidate_id,Stable current region identifier for joining GWEH products,text
+validation/spatial/V1_V2_candidate_containment.csv,conditional_containment,Within-region fraction of the points already located in relevant denominators; not global capture,0–1/undefined
+validation/spatial/V1_V2_candidate_containment.csv,in_denominator,Points within the matching selected evidence denominator for this region and source,count
+validation/spatial/V1_V2_candidate_containment.csv,in_same_selected_region,Subset of in-denominator points found inside same selected region,count
+validation/spatial/V1_V2_candidate_containment.csv,region_area_fraction_of_denominator,"Geodesic area of region intersect denominator divided by denominator area; spatial reference, not an observed hit rate","fraction [0,1]"
+validation/spatial/V1_V2_candidate_containment.csv,source,Independent spatial reference dataset identifier,text

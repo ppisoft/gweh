@@ -1,0 +1,37 @@
+# Copy to workflow.local.yaml and edit all local source paths.
+data_parent: /path/to/regions-data
+# Optional: override the reference model grid template.
+# grid_template: /path/to/grid_template.nc
+scenario_id: gweh-study-001
+run_id: gweh-run-001
+# Omit grid_dir / validation_dir / public_dir for new runs to use defaults.
+# For an already completed scientific run, point these to its verified outputs.
+# grid_dir: /path/to/existing/grid
+# validation_dir: /path/to/new/validation
+# merra_work_dir: /path/to/existing/merra_work
+# merra_result_dir: /path/to/existing/merra_comparison
+# validation_archive_dir: /path/to/new/validation_archive
+# public_dir: /path/to/new/public
+# viewer_dir: /path/to/new/viewer  # optional, self-contained HTML + provenance JSON
+external_root: /path/to/external-inputs
+# For CF-1.11 use an independent IOOS compliance-checker installation.
+# cf_checker: /path/to/compliance-checker
+external:
+  gowires: raw/GOWIRES/GOWIRES_V1.csv
+  grw: raw/GRW/wind_all_2024q2_v1.gpkg
+  deepowt: raw/DeepOWT/DeepOWT.geojson
+  deepowt_gt:
+    - raw/DeepOWT/gt_2021Q2_nsb.geojson
+    - raw/DeepOWT/gt_2021Q2_ecs.geojson
+    - raw/DeepOWT/gt_2021Q2_vtn.geojson
+  irena:
+    - raw/IRENASTAT/C-ELECCAP_SOURCE.csv
+  merra_root: raw/MERRA2
+merra:
+  start: '2008-01-01'
+  end: '2017-12-31'
+# Optional independent screen. Leave these unset for a normal publication run.
+# To screen new proposals, provide an expert CSV/GeoJSON, a radius in km, or both.
+omission:
+  expert_proposals: null
+  unowned_radius_km: null

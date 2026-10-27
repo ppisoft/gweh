@@ -1,0 +1,102 @@
+components:
+  S1:
+    range:
+    - 0
+    - 2
+    meaning: strategic commitment
+  S2:
+    range:
+    - 0
+    - 2
+    meaning: implementation strength
+  S3:
+    range:
+    - 0
+    - 2
+    meaning: geographic coverage
+  S4:
+    range:
+    - 0
+    - 1
+    meaning: current implementation evidence
+reference_mapping:
+  ordered_rules:
+  - score: 4
+    when:
+      S1: 2
+      S2: 2
+      S3: 2
+      S4: 1
+      exceptional_integrated_programme: true
+  - score: 3
+    when:
+      S1: 2
+      S2: 2
+      S3_min: 1
+      S4: 1
+  - score: 2
+    when:
+      S1_min: 1
+      S2_min: 1
+      S3_min: 1
+  - score: 1
+    when:
+      S1_min: 1
+  - score: 0
+    when:
+      otherwise: true
+strict_mapping:
+  ordered_rules:
+  - score: 4
+    when:
+      S1: 2
+      S2: 2
+      S3: 2
+      S4: 1
+      exceptional_integrated_programme: true
+  - score: 3
+    when:
+      S1: 2
+      S2: 2
+      S3: 2
+      S4: 1
+  - score: 2
+    when:
+      S1_min: 1
+      S2: 2
+      S3_min: 1
+  - score: 1
+    when:
+      S1_min: 1
+  - score: 0
+    when:
+      otherwise: true
+negative_policy_caps:
+  NONE:
+    viable_alternative_false:
+      reference_max: null
+      strict_max: null
+    viable_alternative_true:
+      reference_max: null
+      strict_max: null
+  MATERIAL_CONFLICT:
+    viable_alternative_false:
+      reference_max: 1
+      strict_max: 1
+    viable_alternative_true:
+      reference_max: null
+      strict_max: 2
+  FULL_BLOCK:
+    viable_alternative_false:
+      reference_max: 0
+      strict_max: 0
+    viable_alternative_true:
+      reference_max: 1
+      strict_max: 1
+invariants:
+  strict_must_not_exceed_reference: true
+ordinal_sensitivity:
+  minus1: max(0, S_reference - 1)
+  minus2: max(0, S_reference - 2)
+  zero: '0'
+  plus1: min(4, S_reference + 1)

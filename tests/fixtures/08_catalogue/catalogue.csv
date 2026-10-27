@@ -1,0 +1,66 @@
+candidate_id,region_name,macroregion,surface_type,display_order,R_score,D_score,P_score,S_score,H_without_S,H_score,primary_pass,absolute_market_pass,evidence_selection_status,selection_pathway,market_maturity,maturity_basis
+north_sea_offshore,North Sea offshore,Europe,offshore,0,4.0,4.0,4.0,4,12.0,16.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+baltic_offshore,Baltic offshore,Europe,offshore,1,4.0,3.0,4.0,4,11.0,15.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+irish_celtic_seas_offshore,Irish/Celtic Seas offshore,Europe,offshore,2,4.0,2.0,4.0,3,10.0,13.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+norwegian_barents_offshore,Norwegian/Barents offshore,Europe,offshore,3,4.0,0.0,0.0,2,4.0,6.0,False,False,EVIDENCE_NOT_SELECTED,NOT_SELECTED,PROSPECTIVE,STRATEGY
+fennoscandia_north_onshore,Fennoscandia North onshore,Europe,onshore,4,2.0,3.0,3.0,2,8.0,10.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+iberia_onshore,Iberia onshore,Europe,onshore,5,2.0,4.0,4.0,3,10.0,13.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+w_iberia_atlantic_offshore,W Iberia Atlantic offshore,Europe,offshore,6,4.0,0.0,2.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+north_central_europe_onshore,North-Central Europe onshore - Germany-Poland-Benelux wind belt,Europe,onshore,7,2.0,4.0,2.0,2,8.0,10.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+france_onshore_wind_belt,France onshore wind belt,Europe,onshore,8,2.0,3.0,1.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+turkiye_aegean_w_anatolia_onshore,Türkiye Aegean-Western Anatolia onshore,Europe/Asia,onshore,9,1.0,2.0,0.0,3,3.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+us_great_plains,US Great Plains,North America,onshore,10,3.0,4.0,2.0,2,9.0,11.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+canadian_prairies,Canadian Prairies,North America,onshore,11,2.0,1.0,1.0,2,4.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+us_east_coast_offshore,US East Coast offshore,North America,offshore,12,4.0,1.0,3.0,3,8.0,11.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+us_gulf_offshore,US Gulf offshore,North America,offshore,13,1.0,0.0,0.0,0,1.0,1.0,False,False,EVIDENCE_NOT_SELECTED,NOT_SELECTED,PROSPECTIVE,LOW_MARKET_EVIDENCE
+us_west_coast_offshore,US West Coast offshore,North America,offshore,14,4.0,0.0,1.0,3,5.0,8.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+tehuantepec_oaxaca_onshore,Tehuantepec/Oaxaca onshore,North America,onshore,15,2.0,1.0,0.0,2,3.0,5.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+ne_brazil_onshore,NE Brazil onshore,South America,onshore,16,1.0,3.0,3.0,3,7.0,10.0,True,False,EVIDENCE_SELECTED,PRIMARY_MARKET_PROJECT_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+ne_brazil_offshore,NE Brazil offshore,South America,offshore,17,2.0,0.0,0.0,2,2.0,4.0,False,False,EVIDENCE_NOT_SELECTED,NOT_SELECTED,PROSPECTIVE,STRATEGY
+patagonia_onshore,Patagonia onshore,South America,onshore,18,4.0,1.0,2.0,3,7.0,10.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+southern_brazil_uruguay_onshore,Southern Brazil-Uruguay onshore,South America,onshore,19,1.0,1.0,1.0,3,3.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+caribbean_colombia_venezuela_onshore,Caribbean Colombia/Venezuela onshore corridor,South America,onshore,20,2.0,0.0,1.0,3,3.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+east_china_onshore,East China onshore,East Asia,onshore,21,0.0,4.0,3.0,3,7.0,10.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+east_china_offshore,East China offshore,East Asia,offshore,22,3.0,4.0,2.0,3,9.0,12.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+inner_mongolia_north_china_onshore,Inner Mongolia/North China onshore,East/Central Asia,onshore,23,3.0,4.0,4.0,3,11.0,14.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+xinjiang_gansu_western_china_onshore,Xinjiang-Gansu / Western China onshore,East/Central Asia,onshore,24,2.0,4.0,4.0,3,10.0,13.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+west_india_rajasthan_gujarat_onshore,West India Rajasthan/Gujarat onshore,South Asia,onshore,25,0.0,3.0,2.0,3,5.0,8.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+south_india_tamil_nadu_onshore,South India / Tamil Nadu-Karnataka onshore,South Asia,onshore,26,0.0,3.0,2.0,3,5.0,8.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+taiwan_strait_offshore,Taiwan Strait offshore,East Asia,offshore,27,4.0,4.0,4.0,3,12.0,15.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+japan_offshore,Japan offshore,East Asia,offshore,28,4.0,1.0,1.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+south_korea_offshore,South Korea offshore,East Asia,offshore,29,3.0,1.0,3.0,3,7.0,10.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+vietnam_offshore,Vietnam offshore,Southeast Asia,offshore,30,3.0,2.0,1.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+philippines_priority_offshore,Philippines priority offshore corridor,Southeast Asia,offshore,31,3.0,0.0,3.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,PROJECT_PIPELINE
+kazakhstan_central_asian_steppe_onshore,Kazakhstan / Central Asian Steppe onshore,Central Asia,onshore,32,3.0,1.0,0.0,3,4.0,7.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+south_africa_cape_onshore,South Africa Cape onshore,Africa,onshore,33,2.0,1.0,1.0,3,4.0,7.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+n_africa_atlantic_mixed,N Africa Atlantic mixed,North Africa,mixed,34,4.0,0.0,3.0,2,7.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,PROJECT_PIPELINE
+egypt_suez_mixed,Egypt/Suez mixed,North Africa,mixed,35,3.0,1.0,2.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+oman_arabian_sea_mixed,Oman/Arabian Sea mixed,Middle East,mixed,36,3.0,0.0,3.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,PROJECT_PIPELINE
+saudi_red_sea_neom_mixed,Saudi Red Sea/NEOM mixed,Middle East,mixed,37,2.0,0.0,0.0,3,2.0,5.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,STRATEGY
+horn_of_africa_onshore,Horn of Africa onshore,East Africa,onshore,38,2.0,0.0,0.0,2,2.0,4.0,False,False,EVIDENCE_NOT_SELECTED,NOT_SELECTED,PROSPECTIVE,STRATEGY
+namibia_coast_mixed,Namibia Coast mixed,Southern Africa,mixed,39,3.0,0.0,1.0,3,4.0,7.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+se_australia_onshore,SE Australia onshore,Oceania,onshore,40,2.0,2.0,4.0,3,8.0,11.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+se_australia_offshore,SE Australia offshore,Oceania,offshore,41,4.0,0.0,1.0,3,5.0,8.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+western_australia_onshore,Western Australia onshore,Oceania,onshore,42,1.0,0.0,4.0,3,5.0,8.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,PROJECT_PIPELINE
+british_isles_onshore,British Isles onshore,Europe,onshore,43,4.0,3.0,3.0,3,10.0,13.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+ne_china_manchuria_onshore,NE China / Manchuria onshore,East Asia,onshore,44,1.0,4.0,4.0,3,9.0,12.0,True,False,EVIDENCE_SELECTED,PRIMARY_MARKET_PROJECT_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+se_europe_balkans_onshore,SE Europe / Balkans onshore,Europe,onshore,45,1.0,3.0,3.0,2,7.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_MARKET_PROJECT_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+central_med_offshore,Central Mediterranean / Italy offshore,Europe,offshore,46,3.0,0.0,3.0,3,6.0,9.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,PROJECT_PIPELINE
+guangdong_offshore,Guangdong offshore,East Asia,offshore,47,3.0,3.0,2.0,3,8.0,11.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+ningxia_shaanxi_onshore,Ningxia/Shaanxi onshore,East/Central Asia,onshore,48,1.0,4.0,4.0,3,9.0,12.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+west_sohag_upper_egypt_onshore,West Sohag / Upper Egypt onshore,North Africa,onshore,49,2.0,0.0,3.0,3,5.0,8.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,EMERGING,PROJECT_PIPELINE
+illinois_indiana_onshore,Illinois-Indiana onshore,North America,onshore,50,1.0,2.0,1.0,2,4.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+south_texas_ne_mexico_onshore,South Texas-NE Mexico onshore,North America,onshore,51,1.0,2.0,0.0,2,3.0,5.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+columbia_gorge_pnw_onshore,Columbia Gorge-Pacific Northwest onshore,North America,onshore,52,2.0,2.0,0.0,2,4.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+michigan_ontario_great_lakes_onshore,Michigan-Ontario Great Lakes onshore,North America,onshore,53,3.0,2.0,0.0,2,5.0,7.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+southern_italy_onshore,Southern Italy onshore,Europe,onshore,54,1.0,1.0,0.0,2,2.0,4.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+english_channel_offshore,English Channel offshore,Europe,offshore,55,4.0,3.0,2.0,2,9.0,11.0,True,False,EVIDENCE_SELECTED,PRIMARY_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+central_china_henan_hubei_shanxi_onshore,Central China Henan-Hubei-Shanxi onshore,East Asia,onshore,56,0.0,4.0,3.0,2,7.0,9.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+yunnan_sichuan_highlands_onshore,Yunnan-Sichuan highlands onshore,East/Central Asia,onshore,57,1.0,3.0,2.0,2,6.0,8.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+guizhou_onshore,Guizhou onshore,East/Central Asia,onshore,58,0.0,2.0,4.0,2,6.0,8.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+hunan_onshore,Hunan onshore,East Asia,onshore,59,0.0,2.0,2.0,2,4.0,6.0,False,False,EVIDENCE_NOT_SELECTED,NOT_SELECTED,EMERGING,RELATIVE_DEPLOYMENT
+luzon_onshore,Luzon onshore,Southeast Asia,onshore,60,1.0,0.0,2.0,3,3.0,6.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+guangxi_onshore,Guangxi onshore,East Asia,onshore,61,0.0,3.0,4.0,3,7.0,10.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,CORE,OPERATING_AND_RELATIVE_DEPLOYMENT
+visayas_onshore,Visayas onshore,Southeast Asia,onshore,62,1.0,0.0,1.0,3,2.0,5.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY
+tehachapi_mojave_onshore,Tehachapi–Mojave onshore,North America,onshore,63,3.0,1.0,0.0,3,4.0,7.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,EMERGING,RELATIVE_DEPLOYMENT
+antofagasta_taltal_onshore,Antofagasta–Taltal onshore,South America,onshore,64,1.0,0.0,1.0,2,2.0,4.0,False,True,EVIDENCE_SELECTED,ABSOLUTE_MARKET_RESOURCE,PROSPECTIVE,PIPELINE_AND_STRATEGY

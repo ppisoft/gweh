@@ -1,0 +1,71 @@
+candidate_id,region_name,candidate_surface_type,market_component,operating_mw_component,pipeline_mw_component,n_active_phases_component
+baltic_offshore,Baltic offshore,offshore,offshore,3472.0,110016.0,91
+central_med_offshore,Central Mediterranean / Italy offshore,offshore,offshore,30.0,36292.0,40
+east_china_offshore,East China offshore,offshore,offshore,26793.4,20016.0,154
+egypt_suez_mixed,Egypt/Suez mixed,mixed,offshore,0.0,0.0,0
+english_channel_offshore,English Channel offshore,offshore,offshore,3985.3,10762.0,31
+guangdong_offshore,Guangdong offshore,offshore,offshore,10937.5,11916.0,49
+irish_celtic_seas_offshore,Irish/Celtic Seas offshore,offshore,offshore,2928.2,47685.0,60
+japan_offshore,Japan offshore,offshore,offshore,421.0,6250.0,22
+n_africa_atlantic_mixed,N Africa Atlantic mixed,mixed,offshore,0.0,1943.0,15
+namibia_coast_mixed,Namibia Coast mixed,mixed,offshore,0.0,0.0,0
+ne_brazil_offshore,NE Brazil offshore,offshore,offshore,0.0,142.0,5
+north_sea_offshore,North Sea offshore,offshore,offshore,27647.1,96516.4,178
+norwegian_barents_offshore,Norwegian/Barents offshore,offshore,offshore,0.0,75.0,1
+oman_arabian_sea_mixed,Oman/Arabian Sea mixed,mixed,offshore,0.0,0.0,0
+philippines_priority_offshore,Philippines priority offshore corridor,offshore,offshore,0.0,43887.5,63
+saudi_red_sea_neom_mixed,Saudi Red Sea/NEOM mixed,mixed,offshore,0.0,0.0,0
+se_australia_offshore,SE Australia offshore,offshore,offshore,0.0,4300.0,2
+south_korea_offshore,South Korea offshore,offshore,offshore,321.0,34261.1,88
+taiwan_strait_offshore,Taiwan Strait offshore,offshore,offshore,10961.7,44488.2,108
+us_east_coast_offshore,US East Coast offshore,offshore,offshore,172.0,34411.0,34
+us_gulf_offshore,US Gulf offshore,offshore,offshore,0.0,0.0,0
+us_west_coast_offshore,US West Coast offshore,offshore,offshore,0.0,4960.0,4
+vietnam_offshore,Vietnam offshore,offshore,offshore,1834.5,2641.0,49
+w_iberia_atlantic_offshore,W Iberia Atlantic offshore,offshore,offshore,25.0,15699.0,24
+antofagasta_taltal_onshore,Antofagasta–Taltal onshore,onshore,onshore,1180.0,2378.0,10
+british_isles_onshore,British Isles onshore,onshore,onshore,16915.300000000003,20029.0,825
+canadian_prairies,Canadian Prairies,onshore,onshore,6515.0,3352.0,78
+caribbean_colombia_venezuela_onshore,Caribbean Colombia/Venezuela onshore corridor,onshore,onshore,92.0,4229.1,31
+central_china_henan_hubei_shanxi_onshore,Central China Henan-Hubei-Shanxi onshore,onshore,onshore,46841.6,29586.7,1134
+columbia_gorge_pnw_onshore,Columbia Gorge-Pacific Northwest onshore,onshore,onshore,7473.5,1067.0,69
+east_china_onshore,East China onshore,onshore,onshore,49301.5,24155.2,1103
+egypt_suez_mixed,Egypt/Suez mixed,mixed,onshore,3045.0,15963.0,30
+fennoscandia_north_onshore,Fennoscandia North onshore,onshore,onshore,21788.7,27627.7,424
+france_onshore_wind_belt,France onshore wind belt,onshore,onshore,23597.699999999997,5090.5,1550
+guangxi_onshore,Guangxi onshore,onshore,onshore,17263.9,45120.7,581
+guizhou_onshore,Guizhou onshore,onshore,onshore,8799.0,31693.9,546
+horn_of_africa_onshore,Horn of Africa onshore,onshore,onshore,419.0,0.0,6
+hunan_onshore,Hunan onshore,onshore,onshore,12788.699999999999,16842.0,452
+iberia_onshore,Iberia onshore,onshore,onshore,35664.0,32654.8,1851
+illinois_indiana_onshore,Illinois-Indiana onshore,onshore,onshore,12537.3,4747.2,98
+inner_mongolia_north_china_onshore,Inner Mongolia/North China onshore,onshore,onshore,119370.29999999999,105199.4,1730
+kazakhstan_central_asian_steppe_onshore,Kazakhstan / Central Asian Steppe onshore,onshore,onshore,3017.9,2187.0,38
+luzon_onshore,Luzon onshore,onshore,onshore,54.0,12540.6,78
+michigan_ontario_great_lakes_onshore,Michigan-Ontario Great Lakes onshore,onshore,onshore,8689.0,200.0,117
+n_africa_atlantic_mixed,N Africa Atlantic mixed,mixed,onshore,2243.0,22548.0,44
+namibia_coast_mixed,Namibia Coast mixed,mixed,onshore,0.0,7258.0,8
+ne_brazil_onshore,NE Brazil onshore,onshore,onshore,33453.9,19475.300000000003,1470
+ne_china_manchuria_onshore,NE China / Manchuria onshore,onshore,onshore,58632.0,48088.600000000006,887
+ningxia_shaanxi_onshore,Ningxia/Shaanxi onshore,onshore,onshore,41143.8,47639.6,875
+north_central_europe_onshore,North-Central Europe onshore - Germany-Poland-Benelux wind belt,onshore,onshore,56296.8,7357.800000000001,2838
+oman_arabian_sea_mixed,Oman/Arabian Sea mixed,mixed,onshore,50.0,21772.0,20
+patagonia_onshore,Patagonia onshore,onshore,onshore,5692.099999999999,10363.8,120
+saudi_red_sea_neom_mixed,Saudi Red Sea/NEOM mixed,mixed,onshore,0.0,2370.0,2
+se_australia_onshore,SE Australia onshore,onshore,onshore,10890.4,35943.6,153
+se_europe_balkans_onshore,SE Europe / Balkans onshore,onshore,onshore,13256.0,29231.800000000003,924
+south_africa_cape_onshore,South Africa Cape onshore,onshore,onshore,4229.0,4938.5,70
+south_india_tamil_nadu_onshore,South India / Tamil Nadu-Karnataka onshore,onshore,onshore,17226.199999999997,17858.7,406
+south_texas_ne_mexico_onshore,South Texas-NE Mexico onshore,onshore,onshore,12208.5,276.0,65
+southern_brazil_uruguay_onshore,Southern Brazil-Uruguay onshore,onshore,onshore,3762.3,3890.8,174
+southern_italy_onshore,Southern Italy onshore,onshore,onshore,6421.5,368.1,241
+tehachapi_mojave_onshore,Tehachapi–Mojave onshore,onshore,onshore,3695.1,0.0,44
+tehuantepec_oaxaca_onshore,Tehuantepec/Oaxaca onshore,onshore,onshore,3032.0,15.0,32
+turkiye_aegean_w_anatolia_onshore,Türkiye Aegean-Western Anatolia onshore,onshore,onshore,11127.9,1728.6,309
+us_great_plains,US Great Plains,onshore,onshore,102673.5,17541.5,714
+visayas_onshore,Visayas onshore,onshore,onshore,90.0,4914.8,32
+west_india_rajasthan_gujarat_onshore,West India Rajasthan/Gujarat onshore,onshore,onshore,20062.8,12307.4,433
+west_sohag_upper_egypt_onshore,West Sohag / Upper Egypt onshore,onshore,onshore,0.0,18000.0,4
+western_australia_onshore,Western Australia onshore,onshore,onshore,1189.6,31568.0,32
+xinjiang_gansu_western_china_onshore,Xinjiang-Gansu / Western China onshore,onshore,onshore,107224.8,134869.7,1010
+yunnan_sichuan_highlands_onshore,Yunnan-Sichuan highlands onshore,onshore,onshore,23075.5,8708.7,356

@@ -1,0 +1,85 @@
+sources:
+  GWPT:
+    roles:
+    - PRIMARY_EVIDENCE
+    files:
+    - raw/GWPT/Global-Wind-Power-Tracker-February-2026.xlsx
+    schema:
+      required_fields:
+      - Country/Area
+      - Capacity (MW)
+      - Installation Type
+      - Status
+      - Latitude
+      - Longitude
+      - GEM phase ID
+      expected_sheets:
+      - Data
+      primary_sheet: Data
+      primary_capacity_min_mw: 10.0
+      allowed_statuses:
+      - operating
+      - pre-construction
+      - announced
+      - cancelled
+      - construction
+      - cancelled - inferred 4 y
+      - shelved - inferred 2 y
+      - shelved
+      - retired
+      - mothballed
+      allowed_installation_types:
+      - Onshore
+      - Offshore hard mount
+      - Offshore mount unknown
+      - Offshore floating
+      - Unknown
+      status_groups:
+        operating:
+        - operating
+        pipeline:
+        - construction
+        - pre-construction
+    normalization:
+      surface_type:
+        onshore_exact:
+        - Onshore
+        offshore_prefixes:
+        - Offshore
+        otherwise: unknown
+  EEZ:
+    roles:
+    - GEOMETRY_SUPPORT
+    files:
+    - raw/EEZ/World_EEZ_v12_20231025_gpkg/eez_v12.gpkg
+    expected_crs: EPSG:4326
+    schema:
+      polygon_required_fields:
+      - TERRITORY1
+  NaturalEarth:
+    roles:
+    - GEOMETRY_SUPPORT
+    files:
+    - raw/NaturalEarth/50m_cultural/ne_50m_admin_0_countries.shp
+    expected_crs: EPSG:4326
+  GWA4:
+    roles:
+    - PRIMARY_EVIDENCE
+    files:
+    - raw/GWA/power_density_cog_100m.tif
+    artifact_ids:
+    - WPD100
+  NaturalEarth10m:
+    roles:
+    - GEOMETRY_SUPPORT
+    files:
+    - raw/NaturalEarth/10m_physical/ne_10m_land.shp
+    - raw/NaturalEarth/10m_physical/ne_10m_ocean.shp
+    - raw/NaturalEarth/10m_coastline/ne_10m_coastline.shp
+    expected_crs: EPSG:4326
+  NaturalEarthAdmin1:
+    roles:
+    - GEOMETRY_SUPPORT
+    files:
+    - raw/NaturalEarth/ne_10m_admin_1_states_provinces/ne_10m_admin_1_states_provinces.shp
+    expected_crs: EPSG:4326

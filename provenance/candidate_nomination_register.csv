@@ -1,0 +1,66 @@
+candidate_id,nomination_basis
+north_sea_offshore,deployment + resource + pipeline
+baltic_offshore,pipeline + strategic basin
+irish_celtic_seas_offshore,resource + pipeline
+norwegian_barents_offshore,frontier resource
+fennoscandia_north_onshore,resource + deployment
+iberia_onshore,major established onshore market
+w_iberia_atlantic_offshore,offshore/floating resource
+north_central_europe_onshore,major established market
+france_onshore_wind_belt,major established market
+turkiye_aegean_w_anatolia_onshore,established + rapid growth
+us_great_plains,global-scale deployment/resource
+canadian_prairies,resource + market
+us_east_coast_offshore,offshore deployment/pipeline
+us_gulf_offshore,future offshore
+us_west_coast_offshore,floating frontier
+tehuantepec_oaxaca_onshore,distinctive gap-wind system
+ne_brazil_onshore,mature high-quality resource
+ne_brazil_offshore,major prospective offshore
+patagonia_onshore,exceptional resource
+southern_brazil_uruguay_onshore,distinct southern wind system
+caribbean_colombia_venezuela_onshore,Tests a physically broader Caribbean coastal wind corridor instead of enlarging La Guajira merely to satisfy grid-N.
+east_china_onshore,huge deployment
+east_china_offshore,global-scale offshore deployment
+inner_mongolia_north_china_onshore,huge deployment/resource
+xinjiang_gansu_western_china_onshore,huge resource and deployment
+west_india_rajasthan_gujarat_onshore,large current market
+south_india_tamil_nadu_onshore,mature current market
+taiwan_strait_offshore,mature offshore
+japan_offshore,strategic pipeline
+south_korea_offshore,strategic pipeline
+vietnam_offshore,high potential/pipeline
+philippines_priority_offshore,exceptional potential + roadmap
+kazakhstan_central_asian_steppe_onshore,independent resource + rapidly scaling market
+south_africa_cape_onshore,established continental hub
+n_africa_atlantic_mixed,resource + market/pipeline
+egypt_suez_mixed,distinctive corridor
+oman_arabian_sea_mixed,strategic future/H2
+saudi_red_sea_neom_mixed,strategic future
+horn_of_africa_onshore,exceptional frontier resource
+namibia_coast_mixed,frontier resource/H2
+se_australia_onshore,mature market
+se_australia_offshore,major emerging offshore
+western_australia_onshore,resource + expanding pipeline
+british_isles_onshore,Global GWPT omission challenge converted to a normal project/resource candidate.
+ne_china_manchuria_onshore,Global GWPT omission challenge; 120.5E divider makes the test independent from Inner Mongolia/North China.
+se_europe_balkans_onshore,Global GWPT omission challenge converted from percolating 100-km cells to a geographically bounded Balkan candidate.
+central_med_offshore,Global GWPT omission challenge converted to an Italy/Central-Mediterranean EEZ/coastal candidate.
+guangdong_offshore,Finite compact-omission adjudication converted to a normal candidate nomination.
+ningxia_shaanxi_onshore,Finite compact-omission adjudication converted to a normal candidate nomination.
+west_sohag_upper_egypt_onshore,West Sohag / Upper Egypt candidate included after omission replay; official wind-project documentation retained in strategic evidence.
+illinois_indiana_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Illinois-Indiana onshore.
+south_texas_ne_mexico_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: South Texas-NE Mexico onshore.
+columbia_gorge_pnw_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Columbia Gorge-Pacific Northwest onshore.
+michigan_ontario_great_lakes_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Michigan-Ontario Great Lakes onshore.
+southern_italy_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Southern Italy onshore.
+english_channel_offshore,Added as a distinct candidate in the documented GWEH63 expansion review: English Channel offshore.
+central_china_henan_hubei_shanxi_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Central China Henan-Hubei-Shanxi onshore.
+yunnan_sichuan_highlands_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Yunnan-Sichuan highlands onshore.
+guizhou_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Guizhou onshore.
+hunan_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Hunan onshore.
+luzon_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Luzon onshore.
+guangxi_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Guangxi onshore.
+visayas_onshore,Added as a distinct candidate in the documented GWEH63 expansion review: Visayas onshore.
+tehachapi_mojave_onshore,Independent omission review; California Energy Commission Wind Resource Areas and EIA/CAISO wind deployment evidence
+antofagasta_taltal_onshore,Independent omission review; northern Chile wind-project phase and permitting/resource evidence

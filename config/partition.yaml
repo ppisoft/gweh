@@ -1,0 +1,11 @@
+overlap:
+  min_area_km2: 0.01
+  post_partition_tolerance_km2: 0.02
+  union_redistributed_relative_tolerance: 1.0e-05
+  union_relative_tolerance: 1.0e-07
+persistence:
+  cleanup_trigger_area_km2: 1.0e-06
+  postwrite_overlap_tolerance_km2: 1.0e-06
+  union_symmetric_difference_tolerance_km2: 0.05
+  cleanup_max_passes: 8
+  cleanup_max_artifact_area_km2: 0.1

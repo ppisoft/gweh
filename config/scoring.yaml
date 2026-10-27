@@ -1,0 +1,14 @@
+market_qc_tolerance_mw: 0.001
+resource_metrics:
+  histogram:
+    minimum_w_m2: 0.0
+    maximum_w_m2: 5000.0
+    bin_width_w_m2: 0.5
+  area_thresholds_w_m2:
+  - 300.0
+  - 500.0
+percentile_edges:
+- 20.0
+- 40.0
+- 60.0
+- 80.0

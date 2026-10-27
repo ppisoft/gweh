@@ -1,0 +1,30 @@
+# CF/ACDD metadata of the GWEH reference-grid product.
+# Version DOIs refer to the two reserved Zenodo records.
+# The attribution for third-party inputs is documented separately.
+product_version: 1.0.0
+title: 'GWEH: Global Wind Energy Hotspots on the CESM 192 x 288 grid'
+summary: Mutually exclusive global wind-energy hotspot regions represented by CESM grid-cell centres; separate evidence
+  selection and climate eligibility.
+keywords: wind energy, climate model, global regionalisation, geospatial data, CESM, wind power density
+comment: 'Cell-centre inclusion is strict: boundary centres are unassigned. Selected single-cell regions remain
+  in the full catalogue but not in the climate grid.'
+standard_name_vocabulary: CF Standard Name Table v95
+institution: Department of Atmospheric Physics, Faculty of Mathematics and Physics, Charles University, Prague,
+  Czech Republic
+creator_name: Petr Pisoft
+creator_email: petr.pisoft@matfyz.cuni.cz
+creator_url: https://orcid.org/0000-0002-5034-9169
+naming_authority: cz.cuni.matfyz
+id: gweh_grid_cesm_192x288_v1.0
+references: https://globalenergymonitor.org/projects/global-wind-power-tracker/, https://doi.org/10.11583/DTU.28955267
+license: 'GWEH-created content: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); third-party inputs retain
+  their individual terms'
+publisher_name: Zenodo
+publisher_url: https://zenodo.org
+dataset_doi: 10.5281/zenodo.23555696
+software_doi: 10.5281/zenodo.23555661
+institution_ror: https://ror.org/024d6js02
+creator_orcid: 0000-0002-5034-9169
+acknowledgement: This research was supported by the Johannes Amos Comenius Programme (P JAC) project No. CZ.02.01.01/00/22_008/0004605,
+  Natural and anthropogenic georisks.
+project: Natural and anthropogenic georisks

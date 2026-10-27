@@ -1,0 +1,5 @@
+package_dir: evidence/strategic_s
+assessment_file: strategic_assessment.csv
+rules_file: strategic_score_rules.yaml
+production_score: S_reference
+mapping_sensitivity_score: S_strict

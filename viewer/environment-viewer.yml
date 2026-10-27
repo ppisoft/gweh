@@ -1,0 +1,14 @@
+name: gweh-viewer
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.12
+  - numpy>=2
+  - pandas>=2.2
+  - geopandas>=1.0
+  - shapely>=2
+  - pyproj>=3.6
+  - xarray>=2025.1
+  - netcdf4
+  - pyyaml
+  - pyogrio

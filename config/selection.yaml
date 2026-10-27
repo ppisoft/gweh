@@ -1,0 +1,23 @@
+primary:
+  H_min: 8.0
+  support_min: 2.0
+  R_min: 2.0
+  market_path_min_DP: 3.0
+  market_path_min_S: 2.0
+  project_resource_wpd_min: 300.0
+maturity:
+  CORE_min_D: 3.0
+  EMERGING_min_D: 1.0
+  EMERGING_min_P_if_D0: 3.0
+  PROSPECTIVE_min_P: 1.0
+  PROSPECTIVE_min_S: 2.0
+  core_operating_floor_mw:
+    onshore: 15000.0
+    offshore: 3000.0
+    mixed: 5000.0
+absolute_market:
+  project_wpd_min: 150.0
+  strategic_s_min: 1
+  active_mw_min: 3000.0
+  high_resource_active_mw_min: 2000.0
+  high_resource_wpd_min: 500.0

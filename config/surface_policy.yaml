@@ -1,0 +1,5 @@
+# GWEH reference analytical classification of physical turbine siting.
+marine_offshore_definition: MARINE_WATERS_ONLY
+inland_water_analytical_component: onshore
+unknown_physical_surface_action: UNASSIGNED
+known_cross_surface_geometry_override: FORBIDDEN

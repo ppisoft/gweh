@@ -1,0 +1,1013 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GWEH Data Explorer — Global Wind Energy Hotspots</title><meta name="description" content="Offline reference-region viewer for GWEH v__VERSION__: polygons, CESM grid, classifications and regional evidence.">
+<style>
+:root{
+  --bg:#f5f7fa;
+  --panel:#fff;
+  --ink:#18293b;
+  --muted:#64748b;
+  --line:#dfe5ed;
+  --accent:#1e618e
+}
+*{
+  box-sizing:border-box
+}
+body{
+  margin:0;
+  font:14px/1.4 system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink)
+}
+header{
+  height:64px;
+  padding:11px 22px;
+  background:#142b3c;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+header h1{
+  font-size:19px;
+  margin:0;
+  letter-spacing:.2px
+}
+header p{
+  margin:2px 0 0;
+  color:#b4c7d8;
+  font-size:12px
+}
+.app{
+  display:grid;
+  grid-template-columns:265px minmax(400px,1fr) 365px;
+  height:calc(100vh - 64px);
+  min-height:600px
+}
+.pane{
+  background:var(--panel);
+  padding:18px;
+  overflow:auto
+}
+.left{
+  border-right:1px solid var(--line)
+}
+.right{
+  border-left:1px solid var(--line)
+}
+.pane h2{
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1.15px;
+  margin:5px 0 15px;
+  color:#475569
+}
+.group{
+  border-top:1px solid var(--line);
+  margin-top:17px;
+  padding-top:14px
+}
+.group strong{
+  display:block;
+  margin-bottom:9px;
+  font-size:12px;
+  color:#536678;
+  letter-spacing:.3px
+}
+select,input[type=search]{
+  width:100%;
+  padding:9px 10px;
+  border:1px solid #ced9e5;
+  border-radius:8px;
+  background:white;
+  color:var(--ink);
+  font:inherit
+}
+.check{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:9px 0;
+  cursor:pointer
+}
+.check input{
+  accent-color:var(--accent)
+}
+button{
+  font:inherit;
+  cursor:pointer;
+  border:1px solid #cbd5e1;
+  background:white;
+  padding:7px 10px;
+  border-radius:8px;
+  color:#254256
+}
+button:hover{
+  background:#e9f3f9
+}
+.button-row{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap
+}
+.small{
+  font-size:12px;
+  color:var(--muted)
+}
+.map-area{
+  position:relative;
+  overflow:hidden;
+  background:#eef4f8;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.map-area svg{
+  width:100%;
+  height:100%;
+  touch-action:none;
+  cursor:grab
+}
+.map-area svg.dragging{
+  cursor:grabbing
+}
+.ocean{
+  fill:#f8fbfe;
+  stroke:#718394;
+  stroke-width:1
+}
+.land{
+  fill:#e3e7e8;
+  stroke:#acb8be;
+  stroke-width:.22
+}
+.country{
+  fill:none;
+  stroke:#b8c3c9;
+  stroke-width:.42;
+  vector-effect:non-scaling-stroke;
+  pointer-events:none
+}
+.graticule{
+  stroke:#e0e7ed;
+  stroke-width:.5;
+  fill:none;
+  pointer-events:none
+}
+.region{
+  stroke-width:1.1;
+  stroke-linejoin:round;
+  cursor:pointer;
+  vector-effect:non-scaling-stroke;
+  fill-opacity:.27
+}
+.region:hover{
+  stroke-width:2.5;
+  fill-opacity:.5
+}
+.region.chosen{
+  stroke:#1c2934!important;
+  stroke-width:2.7;
+  fill-opacity:.5
+}
+.anchor{
+  fill:#243447;
+  stroke:white;
+  stroke-width:.45;
+  vector-effect:non-scaling-stroke;
+  pointer-events:none
+}
+.region-label{
+  font:600 7px system-ui,Arial;
+  paint-order:stroke;
+  stroke:#fff;
+  stroke-width:2.4px;
+  stroke-linejoin:round;
+  text-anchor:middle;
+  fill:#192d42;
+  pointer-events:none
+}
+.region-label.compact{
+  font-size:6px
+}
+.grid-layer{
+  fill:none;
+  stroke:#35495d;
+  stroke-width:.42;
+  stroke-opacity:.62;
+  vector-effect:non-scaling-stroke;
+  pointer-events:none
+}
+.hidden{
+  display:none!important
+}
+.toolbar{
+  position:absolute;
+  top:16px;
+  right:16px;
+  display:flex;
+  gap:5px;
+  z-index:1
+}
+.toolbar button{
+  background:#fffdfcdd;
+  box-shadow:0 1px 5px #20324822;
+  font-size:16px;
+  min-width:34px
+}
+.legend{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  background:#ffffffed;
+  border:1px solid #d9e1e8;
+  border-radius:9px;
+  padding:10px 13px;
+  box-shadow:0 2px 10px #172a3d12;
+  max-width:320px
+}
+.legend-title{
+  font-weight:700;
+  font-size:12px;
+  margin-bottom:6px
+}
+.legend-line{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+  padding:3px 0
+}
+.swatch{
+  height:10px;
+  width:14px;
+  border-radius:2px;
+  flex-shrink:0
+}
+.summary{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px
+}
+.metric{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:10px
+}
+.metric b{
+  display:block;
+  font-size:20px
+}
+.metric span{
+  font-size:11px;
+  color:var(--muted)
+}
+.baritem{
+  margin:9px 0
+}
+.barlabel{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  margin-bottom:3px
+}
+.bartrack{
+  height:8px;
+  border-radius:4px;
+  background:#edf2f6;
+  overflow:hidden
+}
+.barfill{
+  height:100%;
+  border-radius:4px
+}
+.result-item{
+  padding:8px 5px;
+  border-bottom:1px solid #e8eef2;
+  cursor:pointer;
+  font-size:12px
+}
+.result-item:hover{
+  background:#f3f8fb
+}
+.tag{
+  display:inline-block;
+  background:#eef3f7;
+  color:#486078;
+  font-size:11px;
+  padding:3px 6px;
+  margin:3px 4px 3px 0;
+  border-radius:5px
+}
+#regionDetail h3{
+  margin:9px 0 4px
+}
+#regionDetail dl{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:7px;
+  margin:14px 0;
+  font-size:12px
+}
+#regionDetail dt{
+  color:#607487
+}
+#regionDetail dd{
+  margin:0;
+  font-weight:600;
+  text-align:right;
+  max-width:190px
+}
+.footnote{
+  margin:14px 0;
+  color:#66798d;
+  font-size:11px
+}
+.help{
+  position:absolute;
+  bottom:13px;
+  right:14px;
+  color:#75869a;
+  font-size:11px;
+  pointer-events:none
+}
+@media(max-width:1000px){
+  .app{
+    grid-template-columns:210px minmax(380px,1fr)
+  }
+  .right{
+    grid-column:1/-1;
+    max-height:260px;
+    border-top:1px solid var(--line)
+  }
+  .app{
+    height:auto
+  }
+  .map-area{
+    min-height:540px
+  }
+}
+@media(max-width:700px){
+  .app{
+    display:flex;
+    flex-direction:column
+  }
+  .left{
+    order:1
+  }
+  .map-area{
+    order:2;
+    min-height:430px
+  }
+  .right{
+    order:3
+  }
+  header{
+    height:auto
+  }
+  .pane{
+    padding:12px
+  }
+  .group{
+    margin-top:10px
+  }
+  .legend{
+    bottom:25px
+  }
+}
+.section-head{
+  font-size:11px;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  color:#4c6980;
+  font-weight:800;
+  margin:18px 0 8px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--line)
+}
+.info-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  gap:10px;
+  padding:6px 0;
+  border-bottom:1px solid #edf0f5;
+  font-size:12px
+}
+.info-label{
+  color:#5d7184;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-width:0
+}
+.info-value{
+  font-weight:650;
+  text-align:right;
+  overflow-wrap:anywhere;
+  max-width:175px
+}
+.info-help{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid #b8c7d5;
+  background:#f0f5f8;
+  color:#48627a;
+  border-radius:50%;
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+  font-size:10px;
+  font-weight:750;
+  cursor:help;
+  padding:0
+}
+.info-help:hover,.info-help:focus{
+  background:#dcecf4;
+  outline:1px solid #8caec3
+}
+#hintPopup{
+  position:fixed;
+  z-index:20;
+  width:min(310px,calc(100vw - 30px));
+  padding:11px 13px;
+  border:1px solid #bbcfde;
+  border-radius:9px;
+  background:#fff;
+  color:#253c50;
+  box-shadow:0 8px 24px #1b3c5633;
+  font-size:12px;
+  line-height:1.45;
+  pointer-events:none
+}
+#hintPopup[hidden]{
+  display:none
+}
+.info-sub{
+  color:#718397;
+  font-size:11px;
+  margin:3px 0 10px
+}
+.region-label.click-only{
+  font-size:11px;
+  font-weight:750;
+  paint-order:stroke;
+  stroke-width:3.3px
+}
+#regionSelect{
+  margin:5px 0 11px
+}
+.empty-selection{
+  color:#728397;
+  font-size:12px;
+  padding:12px 0
+}
+.detail-chips{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  margin:8px 0 15px
+}
+.detail-chips span{
+  font-size:10px;
+  background:#eff5f9;
+  border-radius:6px;
+  padding:4px 7px;
+  color:#3f5e73
+}
+.map-area svg .region:focus{
+  stroke:#101f35;
+  stroke-width:3;
+  outline:none
+}
+.viewer-provenance details{
+  margin-top:9px
+}
+.viewer-provenance summary{
+  color:#2b5e86;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:650
+}
+.viewer-provenance code{
+  font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+  overflow-wrap:anywhere
+}
+</style></head><body>
+<header><div><h1>GWEH <span style="font-weight:400;color:#a3c4d8">/ Data Explorer</span></h1><p>Global Wind Energy Hotspots · GWEH v__VERSION__ · Robinson projection</p></div><div style="font-size:12px;color:#bfd0db">GeoPackage + __GRID_DESCRIPTION__</div></header>
+<div class="app"><aside class="pane left"><h2>Display</h2><label for="attribute" class="small">Colour regions by</label><select id="attribute"><option value="market_maturity">Market maturity</option><option value="selection_pathway">Selection pathway</option><option value="evidence_selection_status">Evidence selection</option><option value="climate_use_tier">Climate analysis tier</option><option value="surface_type">Surface type</option><option value="macroregion">Macroregion</option><option value="R_score">Resource score R</option><option value="S_score">Strategic score S</option></select>
+<div class="group"><strong>Map layers</strong><label class="check"><input type="checkbox" id="geoFill" checked> GeoPackage fills</label><label class="check"><input type="checkbox" id="geoBorders" checked> GeoPackage boundaries</label><label class="check"><input type="checkbox" id="gridToggle"> Model-grid cell boundaries</label><label class="check"><input type="checkbox" id="basemapToggle" checked> Base map</label><label class="check"><input type="checkbox" id="countriesToggle" checked> Country boundaries</label></div>
+<div class="group"><strong>Labels</strong><select id="labels"><option value="none">No labels</option><option value="click" selected>Selected region only</option><option value="short">Short names</option><option value="full">Full names</option></select><label class="check"><input id="pointsToggle" type="checkbox"> Region label anchors</label></div>
+<div class="group"><strong>Filter regions</strong><select id="selectionFilter"><option value="all">All candidates</option><option value="selected">Evidence-selected only</option><option value="primary">Primary climate panel only</option><option value="grid">Represented on the model grid</option><option value="not_selected">Not selected only</option></select><input style="margin-top:9px" id="regionSearch" type="search" placeholder="Search by name or ID…"></div>
+<div class="group"><strong>Map navigation</strong><div class="button-row"><button id="reset">Full extent</button><button id="fitSelection">Zoom to selection</button><button id="saveSvg">Export SVG</button></div><p class="footnote">Drag to pan; use the mouse wheel or +/− to zoom. Click a region to inspect its data.</p><div class="group viewer-provenance"><strong>Data and provenance</strong>
+<p class="small">GWEH v__VERSION__ · __CANDIDATE_COUNT__ candidate systems. A supplementary visualization, not the authoritative data product.</p>
+<details><summary>Source data and terms</summary>
+<p class="small">Region geometries: <code>GWEH_geometries.gpkg</code>; classifications and statistics: public GWEH CSV tables; Model-grid boundaries: <code>__GRID_FILENAME__</code>. Counts use strict cell-centre inclusion.</p>
+<p class="small">Values reflect the frozen GWEH reference release, not real-time energy production, turbine suitability or forecast output. Use the dataset itself for scientific analysis and citation.</p>
+<p class="small">Background cartography: Natural Earth (public domain); separate from GWEH-created data. See the package documentation for attribution and source checksums.</p>
+<p class="small">Catalogue SHA-256: <code id="sourceHash"></code></p>
+</details></div>
+</div></aside>
+<main class="map-area"><svg id="map" role="img" aria-label="Interactive Robinson projection of global wind-energy reference regions" viewBox="0 0 1200 610" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="worldClip"><rect width="1200" height="610"/></clipPath></defs>
+<rect x="0" y="0" width="1200" height="610" fill="#f3f8fb"/>
+<g id="viewport"><g id="baseLayer"><rect x="0" y="0" width="1200" height="610" rx="50" class="ocean"/><g class="land"><path d="__BACKGROUND__"/></g><g class="country"><path d="__COUNTRIES__"/></g></g><g id="gridLayer" class="grid-layer hidden">__GRID__</g><g id="regionsLayer">__REGIONS__</g><g id="dotsLayer" class="hidden">__DOTS__</g><g id="labelsLayer">__LABELS__</g></g></svg>
+<div class="toolbar"><button id="zoomIn" title="Zoom in">+</button><button id="zoomOut" title="Zoom out">−</button><button id="zoomReset" title="Reset view">⌂</button></div><div class="legend"><div class="legend-title" id="legendTitle">Market maturity</div><div id="legendItems"></div></div><div class="help">Click a region · drag to pan · scroll to zoom</div></main>
+<aside class="pane right"><h2>GWEH summary</h2><div class="summary"><div class="metric"><b id="candidateStat">—</b><span>Visible candidates</span></div><div class="metric"><b id="selectedStat">—</b><span>Evidence-selected</span></div><div class="metric"><b id="primaryStat">—</b><span>Primary climate</span></div><div class="metric"><b id="cellStat">—</b><span>Active model-grid cells</span></div></div><div class="group"><strong>Breakdown by current category</strong><div id="bars"></div></div><div class="group"><strong>Region details</strong><label for="regionSelect" class="small">Choose a region</label><select id="regionSelect"><option value="">— Select a region —</option></select><div id="regionDetail"><p class="small">Click a region on the map or select one from the list.</p></div></div></aside></div><div id="hintPopup" role="tooltip" hidden></div>
+<script>
+const records=__RECORDS__, totals=__COUNTS__, provenance=__PROVENANCE__;
+const palettes={
+  market_maturity:{
+    CORE:'#e34d55',EMERGING:'#3288bd',PROSPECTIVE:'#37a653'
+  }
+  ,
+  selection_pathway:{
+    PRIMARY_RESOURCE:'#d84e41',ABSOLUTE_MARKET_RESOURCE:'#337fac',PRIMARY_MARKET_PROJECT_RESOURCE:'#42a46d',NOT_SELECTED:'#959ca5'
+  }
+  ,
+  evidence_selection_status:{
+    EVIDENCE_SELECTED:'#278b77',NOT_SELECTED:'#a0a7ad'
+  }
+  ,
+  surface_type:{
+    onshore:'#cb6847',offshore:'#347dab',mixed:'#7855a9'
+  }
+  ,
+  climate_use_tier:{
+  }
+  ,macroregion:{
+  }
+  ,R_score:{
+  }
+  ,S_score:{
+  }
+}
+const fallback=['#387bb1','#e87947','#48a88c','#a376c8','#d25c87','#9b9c49','#bd7440','#607ba2','#c082a4'];
+const $=id=>document.getElementById(id);
+const map=$('map'),viewport=$('viewport');
+let attr='market_maturity', selected=null,scale=1, tx=0,ty=0,last=null;
+let visible=[],palette={
+}
+;
+const pretty={
+  EVIDENCE_SELECTED:'Evidence-selected',EVIDENCE_NOT_SELECTED:'Not selected',
+  PRIMARY_RESOURCE:'Primary resource',PRIMARY_MARKET_PROJECT_RESOURCE:'Primary market / project',
+  ABSOLUTE_MARKET_RESOURCE:'Absolute market / resource',NOT_SELECTED:'Not selected',
+  CORE:'Core',EMERGING:'Emerging',PROSPECTIVE:'Prospective',
+  PRIMARY_CLIMATE_N_GE12:'Primary (≥12 cells)',LOW_N_EXTENSION_8_11:'Low-N (8–11 cells)',
+  NARROW_CLIMATE_2_7:'Narrow (2–7 cells)',EXCLUDED_CLIMATE_SINGLE_CELL:'Single cell (not mapped)',
+  OPERATING_AND_RELATIVE_DEPLOYMENT:'Operating capacity + deployment evidence',
+  RELATIVE_DEPLOYMENT:'Deployment evidence',PROJECT_PIPELINE:'Project pipeline',
+  PIPELINE_AND_STRATEGY:'Pipeline + strategic evidence',STRATEGY:'Strategic evidence',
+  LOW_MARKET_EVIDENCE:'Low market evidence'
+}
+;
+function fmt(v,d=0){
+  if(v==null||v==='')return'—';
+  let a=Number(v);
+  return Number.isFinite(a)?a.toLocaleString('en-GB',{
+    maximumFractionDigits:d
+  }
+  ):String(v)
+}
+function val(r,k){
+  let a=r[k];
+  return a==null?'Unknown':String(a)
+}
+function isVisible(r){
+  let f=$('selectionFilter').value,q=$('regionSearch').value.trim().toLowerCase();
+  return(f==='all'||(f==='selected'&&r.evidence_selection_status==='EVIDENCE_SELECTED')||(f==='not_selected'&&r.evidence_selection_status!=='EVIDENCE_SELECTED')||(f==='primary'&&Number(r.primary_climate_panel)===1)||(f==='grid'&&Number(r.climate_grid_center_count)>=2))&&(!q||r.region_name.toLowerCase().includes(q)||r.candidate_id.toLowerCase().includes(q))
+}
+function makePalette(){
+  let keys=[...new Set(records.map(r=>val(r,attr)))].sort();
+  let p={
+    ...(palettes[attr]||{
+    }
+    )
+  }
+  ;
+  for(const k of keys)if(!(k in p))p[k]=fallback[Object.keys(p).length%fallback.length];
+  return p
+}
+function labelText(r){
+  let text=r.region_name;
+  if($('labels').value==='short'){
+    text=text.replaceAll('offshore','off.').replaceAll('onshore','onsh.').replaceAll('Central','Ctr.').replaceAll('Northern','N.').replaceAll('Southern','S.');
+    if(text.length>29)text=text.slice(0,27)+'…'
+  }
+  return text
+}
+const byId=new Map(records.map(r=>[r.candidate_id,r]));
+$('sourceHash').textContent=provenance.file_sha256['GWEH_catalogue.csv'].slice(0,16)+'…';
+const explanations=__GLOSSARY__;
+const topGroups=[
+['Classification',[
+['market_maturity','Market maturity'],['maturity_basis','Maturity basis'],['selection_pathway','Selection pathway'],['evidence_selection_status','Evidence selection'],['primary_pass','Primary pathway pass'],['absolute_market_pass','Absolute market pass'],['climate_analysis_eligible','Climate-eligible'],['primary_climate_panel','Primary climate panel'],['climate_use_tier','Climate tier'],['climate_grid_center_count','Grid cells'],['surface_type','Surface type'],['macroregion','Macroregion']]],
+['R / D / P / S / H evidence',[
+['R_score','R · Resource'],['D_score','D · Deployment'],['P_score','P · Pipeline'],['S_score','S · Strategic'],['H_score','H · Total evidence'],['H_without_S','H without S']]],
+['Wind resource · GWA4',[
+['WPD100_mean_aw','WPD100 mean'],['WPD100_median_aw','WPD100 median'],['WPD100_p75_aw','WPD100 P75'],['A300_km2','Area ≥300 W/m²'],['A500_km2','Area ≥500 W/m²'],['F300','Fraction ≥300'],['F500','Fraction ≥500'],['wpd_valid_area_km2','Valid WPD area'],['project_WPD100_capacity_weighted','Project WPD weighted'],['project_resource_n','Sampled projects']]],
+['Market · GWPT',[
+['operating_mw_total','Operating capacity'],['pipeline_mw_total','Committed pipeline'],['operating_mw_within_tolerance','Operating · tolerance'],['pipeline_mw_within_tolerance','Pipeline · tolerance'],['n_denominator_phases','Phases in denominator'],['n_inside_phases','Phases in polygon']]],
+['Coverage and geometry',[
+['evidence_area_km2','Evidence polygon area'],['coverage_denominator_mw','Denominator capacity'],['coverage_inside_mw','Inside capacity'],['coverage_outside_mw','Outside capacity'],['coverage_strict_fraction','Strict coverage'],['coverage_within_tolerance_fraction','Tolerance coverage']]]
+];
+const fmtKinds={
+}
+;
+for(let k of ['WPD100_mean_aw','WPD100_median_aw','WPD100_p75_aw','project_WPD100_capacity_weighted'])fmtKinds[k]=[' W/m²',1];
+for(let k of ['operating_mw_total','pipeline_mw_total','operating_mw_within_tolerance','pipeline_mw_within_tolerance','coverage_denominator_mw','coverage_inside_mw','coverage_outside_mw'])fmtKinds[k]=[' MW',0];
+for(let k of ['evidence_area_km2','A300_km2','A500_km2','wpd_valid_area_km2'])fmtKinds[k]=[' km²',0];
+for(let k of ['F300','F500','coverage_strict_fraction','coverage_within_tolerance_fraction'])fmtKinds[k]=[' %',1];
+function display(k,v){
+  if(v===null||v===undefined||v==='')return'—';
+  if(['primary_pass','absolute_market_pass','climate_analysis_eligible','primary_climate_panel'].includes(k))return Number(v)===1?'Yes':'No';
+  if(fmtKinds[k]){
+    let [u,d]=fmtKinds[k];
+    return u===' %'?fmt(Number(v)*100,d)+u:fmt(v,d)+u
+  }
+  return pretty[v]||((typeof v==='number')?fmt(v,Number.isInteger(v)?0:2):String(v))
+}
+function infoRow(k,label,value){
+  const row=document.createElement('div');
+  row.className='info-row';
+  const left=document.createElement('div');
+  left.className='info-label';
+  const span=document.createElement('span');
+  span.textContent=label;
+  left.append(span);
+  if(explanations[k]){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='info-help';
+    b.textContent='?';
+    b.setAttribute('aria-label','Explanation: '+label);
+    b.dataset.help=k;
+    left.append(b)
+  }
+  const v=document.createElement('div');
+  v.className='info-value';
+  v.textContent=display(k,value);
+  row.append(left,v);
+  return row
+}
+function update(){
+  attr=$('attribute').value;
+  palette=makePalette();
+  visible=records.filter(isVisible);
+  const valid=new Set(visible.map(r=>r.candidate_id));
+  for(const el of document.querySelectorAll('.region')){
+    const r=byId.get(el.dataset.id),on=valid.has(el.dataset.id),c=palette[val(r,attr)];
+    el.classList.toggle('hidden',!on);
+    el.classList.toggle('chosen',selected===el.dataset.id);
+    el.style.fill=$('geoFill').checked?c:'none';
+    el.style.stroke=$('geoBorders').checked?c:'transparent';
+  }
+  $('gridLayer').classList.toggle('hidden',!$('gridToggle').checked);
+  for(const cell of document.querySelectorAll('.grid-cell'))cell.classList.toggle('hidden',!valid.has(cell.dataset.id));
+  $('baseLayer').classList.toggle('hidden',!$('basemapToggle').checked);
+  document.querySelector('.country').classList.toggle('hidden',!$('countriesToggle').checked);
+  $('dotsLayer').classList.toggle('hidden',!$('pointsToggle').checked);
+  for(const e of document.querySelectorAll('.anchor'))e.classList.toggle('hidden',!valid.has(e.dataset.id));
+  const mode=$('labels').value;
+  $('labelsLayer').classList.toggle('hidden',mode==='none');
+  for(const e of document.querySelectorAll('.region-label')){
+    let r=byId.get(e.dataset.id);
+    e.classList.toggle('hidden',!valid.has(e.dataset.id)||(mode==='click'&&selected!==e.dataset.id));
+    e.classList.toggle('click-only',mode==='click');
+    e.textContent=mode==='click'?r.region_name:labelText(r);
+    e.style.fill=palette[val(r,attr)];
+  }
+  renderStats();
+  renderLegend();
+  renderSelect();
+  showDetail()
+}
+function legendLine(key, count) {
+  const line = document.createElement('div');
+  line.className = 'legend-line';
+  const swatch = document.createElement('span');
+  swatch.className = 'swatch';
+  swatch.style.background = palette[key];
+  const text = document.createElement('span');
+  text.textContent = pretty[key] || key;
+  const amount = document.createElement('strong');
+  amount.style.marginLeft = 'auto';
+  amount.textContent = String(count);
+  line.append(swatch, text, amount);
+  return line;
+}
+function renderLegend() {
+  const counts = {
+  }
+  ;
+  for (const region of visible) {
+    const key = val(region, attr);
+    counts[key] = (counts[key] || 0) + 1;
+  }
+  $('legendTitle').textContent = $('attribute').selectedOptions[0].textContent;
+  const sorted = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+  $('legendItems').replaceChildren(...sorted.map(key => legendLine(key, counts[key])));
+}
+function renderStats() {
+  const counts = {
+  }
+  ;
+  for (const region of visible) {
+    const key = val(region, attr);
+    counts[key] = (counts[key] || 0) + 1;
+  }
+  $('candidateStat').textContent = visible.length;
+  $('selectedStat').textContent = visible.filter(r =>
+  r.evidence_selection_status === 'EVIDENCE_SELECTED').length;
+  $('primaryStat').textContent = visible.filter(r =>
+  Number(r.primary_climate_panel) === 1).length;
+  $('cellStat').textContent = visible.reduce((total, r) => total +
+  (Number(r.climate_analysis_eligible) === 1
+  ? (Number(r.climate_grid_center_count) || 0) : 0), 0).toLocaleString('en-GB');
+  const maximum = Math.max(1, ...Object.values(counts));
+  const barRows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  $('bars').replaceChildren(...barRows.map(([key, count]) => {
+    const row = document.createElement('div');
+    row.className = 'baritem';
+    const label = document.createElement('div');
+    label.className = 'barlabel';
+    const text = document.createElement('span');
+    text.textContent = pretty[key] || key;
+    const number = document.createElement('b');
+    number.textContent = String(count);
+    label.append(text, number);
+    const track = document.createElement('div');
+    track.className = 'bartrack';
+    const fill = document.createElement('div');
+    fill.className = 'barfill';
+    fill.style.width = `${100 * count / maximum}%`;
+    fill.style.background = palette[key];
+    track.append(fill);
+    row.append(label, track);
+    return row;
+  }
+  ));
+}
+function renderSelect(){
+  let box=$('regionSelect');
+  box.replaceChildren();
+  let first=document.createElement('option');
+  first.value='';
+  first.textContent='— Select a region —';
+  box.append(first);
+  for(const r of records.slice().sort((a,b)=>a.region_name.localeCompare(b.region_name))){
+    const op=document.createElement('option');
+    op.value=r.candidate_id;
+    op.textContent=r.region_name;
+    box.append(op)
+  }
+  box.value=selected||''
+}
+function showDetail(){
+  const node=$('regionDetail');
+  node.replaceChildren();
+  let r=byId.get(selected);
+  if(!r){
+    let p=document.createElement('p');
+    p.className='empty-selection';
+    p.textContent='Click a region on the map or select one from the list.';
+    node.append(p);
+    return
+  }
+  const h=document.createElement('h3');
+  h.textContent=r.region_name;
+  node.append(h);
+  const sub=document.createElement('div');
+  sub.className='info-sub';
+  sub.textContent=r.candidate_id;
+  node.append(sub);
+  const chips=document.createElement('div');
+  chips.className='detail-chips';
+  for(const key of ['market_maturity','surface_type','evidence_selection_status']){
+    const chip=document.createElement('span');
+    chip.textContent=pretty[r[key]]||r[key];
+    chips.append(chip)
+  }
+  node.append(chips);
+  for(const [header,fields] of topGroups){
+    let title=document.createElement('div');
+    title.className='section-head';
+    title.textContent=header;
+    node.append(title);
+    for(const [key,label] of fields)node.append(infoRow(key,label,r[key]))
+  }
+  const comps=r.market_components||[];
+  if(comps.length){
+    const title=document.createElement('div');
+    title.className='section-head';
+    title.textContent='Onshore / offshore components';
+    node.append(title);
+    for(const c of comps){
+      const sub=document.createElement('div');
+      sub.className='info-sub';
+      sub.textContent=String(c.market_component).toUpperCase();
+      node.append(sub);
+      for(const [k,l] of [['operating_mw_component','Operating'],['pipeline_mw_component','Pipeline'],['n_active_phases_component','Active phases']])node.append(infoRow(k,l,c[k]))
+    }
+  }
+}
+function choose(id,fit=false){
+  selected=id||null;
+  if(selected){
+    const record=byId.get(selected);
+    if(record&&!isVisible(record)){
+      $('selectionFilter').value='all';
+      $('regionSearch').value='';
+    }
+  }
+  update();
+  $('hintPopup').hidden=true;
+  if(fit&&selected)fitRegion();
+  if(selected){
+    const panel=document.querySelector('.right');
+    const detail=$('regionDetail');
+    const offset=detail.getBoundingClientRect().top-panel.getBoundingClientRect().top+panel.scrollTop;
+    panel.scrollTo({
+      top:Math.max(0,offset-115),behavior:'auto'
+    }
+    );
+  }
+}
+function fitRegion(){
+  if(!selected)return;
+  const el=[...document.querySelectorAll('.region')].find(e=>e.dataset.id===selected);
+  if(!el)return;
+  let b=el.getBBox();
+  let f=Math.min(13,Math.max(1.35,Math.min(790/Math.max(1,b.width),430/Math.max(1,b.height))));
+  scale=f;
+  tx=600-(b.x+b.width/2)*f;
+  ty=305-(b.y+b.height/2)*f;
+  transform()
+}
+for(const el of document.querySelectorAll('.region')){
+  el.setAttribute('tabindex','0');
+  el.setAttribute('role','button');
+  el.addEventListener('click',e=>{
+    if(!suppressClick)choose(el.dataset.id);e.stopPropagation()
+  }
+  );
+  el.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();choose(el.dataset.id)
+    }
+  }
+  )
+}
+let suppressClick=false;
+function transform(){
+  viewport.setAttribute('transform',`translate(${tx} ${ty}) scale(${scale})`);
+  // Keep geographic label text at a readable, constant on-screen size.
+  const inverse=1/scale;
+  for(const label of document.querySelectorAll('.region-label')){
+    const x=Number(label.getAttribute('x'));
+    const y=Number(label.getAttribute('y'));
+    label.setAttribute('transform',`translate(${x} ${y}) scale(${inverse}) translate(${-x} ${-y})`);
+  }
+}
+function zoom(f,x=600,y=305){
+  const ns=Math.max(1,Math.min(22,scale*f));
+  const s=ns/scale;
+  tx=x-(x-tx)*s;
+  ty=y-(y-ty)*s;
+  scale=ns;
+  transform()
+}
+function reset(){
+  scale=1;
+  tx=0;
+  ty=0;
+  transform()
+}
+map.addEventListener('wheel',e=>{
+  e.preventDefault();const p=map.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const local=p.matrixTransform(map.getScreenCTM().inverse());zoom(e.deltaY<0?1.2:1/1.2,local.x,local.y)
+}
+,{
+  passive:false
+}
+);
+// Capture the pointer only after a real drag has begun. Capturing on
+// pointerdown redirects the eventual click from the polygon to the SVG root.
+let pointerStart=null,activePointer=null,panning=false;
+function mapPoint(clientX,clientY){
+  const point=map.createSVGPoint();
+  point.x=clientX;
+  point.y=clientY;
+  return point.matrixTransform(map.getScreenCTM().inverse());
+}
+map.addEventListener('pointerdown',e=>{
+  if(e.button!==0||activePointer!==null)return;
+  activePointer=e.pointerId;
+  last=[e.clientX,e.clientY];
+  pointerStart=[e.clientX,e.clientY];
+  panning=false;
+  suppressClick=false;
+}
+);
+map.addEventListener('pointermove',e=>{
+  if(e.pointerId!==activePointer||!last)return;
+  if(!panning){
+    if(Math.hypot(e.clientX-pointerStart[0],e.clientY-pointerStart[1])<=5)return;
+    panning=true;
+    suppressClick=true;
+    map.setPointerCapture(e.pointerId);
+    map.classList.add('dragging');
+  }
+  const before=mapPoint(last[0],last[1]);
+  const after=mapPoint(e.clientX,e.clientY);
+  tx+=after.x-before.x;
+  ty+=after.y-before.y;
+  last=[e.clientX,e.clientY];
+  transform();
+}
+);
+function finishPointer(e){
+  if(e.pointerId!==activePointer)return;
+  if(map.hasPointerCapture(e.pointerId))map.releasePointerCapture(e.pointerId);
+  activePointer=null;
+  last=null;
+  pointerStart=null;
+  panning=false;
+  map.classList.remove('dragging');
+}
+map.addEventListener('pointerup',finishPointer);
+map.addEventListener('pointercancel',finishPointer);
+$('zoomIn').onclick=()=>zoom(1.4);
+$('zoomOut').onclick=()=>zoom(1/1.4);
+$('zoomReset').onclick=$('reset').onclick=reset;
+$('fitSelection').onclick=fitRegion;
+$('regionSelect').addEventListener('change',e=>choose(e.target.value,true));
+$('saveSvg').onclick=()=>{
+  const clone=map.cloneNode(true);
+  const styles=document.createElementNS('http://www.w3.org/2000/svg','style');
+  styles.textContent='.ocean{fill:#f8fbfe;stroke:#718394;stroke-width:1}.land{fill:#e3e7e8;stroke:#acb8be;stroke-width:.22}.country{fill:none;stroke:#b8c3c9;stroke-width:.42}.grid-layer{fill:none;stroke:#35495d;stroke-width:.42;stroke-opacity:.62}.region{stroke-width:1.1;stroke-linejoin:round;fill-opacity:.27}.region.chosen{stroke:#1c2934!important;stroke-width:2.7;fill-opacity:.5}.region-label{font:600 7px sans-serif;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:2.4px}.region-label.click-only{font-size:11px}.anchor{fill:#243447;stroke:white;stroke-width:.45}.hidden{display:none}';
+  clone.insertBefore(styles,clone.firstChild);
+  const attribution=document.createElementNS('http://www.w3.org/2000/svg','text');
+  attribution.setAttribute('x','14');
+  attribution.setAttribute('y','601');
+  attribution.setAttribute('font-size','6');
+  attribution.setAttribute('fill','#496071');
+  attribution.textContent='GWEH v__VERSION__ | Base geography: Natural Earth (public domain)';
+  clone.appendChild(attribution);
+  const svg='<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(clone);
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([svg],{
+    type:'image/svg+xml'
+  }
+  ));
+  a.download='GWEH_explorer.svg';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1500)
+}
+;
+for(let id of ['attribute','geoFill','geoBorders','gridToggle','basemapToggle','countriesToggle','labels','pointsToggle','selectionFilter','regionSearch'])$(id).addEventListener(id==='regionSearch'?'input':'change',update);
+const popup=$('hintPopup');
+function closeHint(){
+  popup.hidden=true
+}
+function showHint(e){
+  const help=e.target.closest('.info-help');
+  if(!help){
+    closeHint();
+    return
+  }
+  const k=help.dataset.help;
+  popup.textContent=explanations[k];
+  popup.hidden=false;
+  const r=help.getBoundingClientRect();
+  const w=popup.offsetWidth,h=popup.offsetHeight;
+  let left=Math.min(window.innerWidth-w-12,Math.max(12,r.left-w-10));
+  let top=Math.min(window.innerHeight-h-12,Math.max(12,r.bottom+8));
+  popup.style.left=left+'px';
+  popup.style.top=top+'px'
+}
+document.addEventListener('mouseover',e=>{
+  if(e.target.closest('.info-help'))showHint(e)
+}
+);
+document.addEventListener('focusin',e=>{
+  if(e.target.closest('.info-help'))showHint(e)
+}
+);
+document.addEventListener('click',e=>{
+  if(e.target.closest('.info-help')){
+    showHint(e)
+  }
+  else closeHint()
+}
+);
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('.info-help'))closeHint()
+}
+);
+document.addEventListener('focusout',e=>{
+  if(e.target.closest('.info-help'))closeHint()
+}
+);
+update();
+</script></body></html>

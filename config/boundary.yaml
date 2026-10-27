@@ -1,0 +1,11 @@
+name: NE10m
+physical_dataset_id: NaturalEarth10m
+land_suffix: ne_10m_land.shp
+ocean_suffix: ne_10m_ocean.shp
+coastline_suffix: ne_10m_coastline.shp
+admin_dataset_id: NaturalEarth
+admin_suffix: ne_50m_admin_0_countries.shp
+eez_dataset_id: EEZ
+eez_suffix: eez_v12.gpkg
+admin1_dataset_id: NaturalEarthAdmin1
+admin1_suffix: ne_10m_admin_1_states_provinces.shp

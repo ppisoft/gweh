@@ -1,0 +1,23 @@
+project_coverage_target: 0.8
+project_link_km:
+  onshore: 80.0
+  offshore: 130.0
+resource_support:
+  wpd_threshold_w_m2: 300.0
+  min_patch_km2: 1000.0
+  link_km:
+    onshore: 130.0
+    offshore: 150.0
+  area_fraction_no_projects: 0.55
+  coarse_resource_grid_km: 10.0
+membership_spatial_eligibility:
+  tolerance_km: 10.0
+morphology:
+  closing_km:
+    onshore: 20.0
+    offshore: 30.0
+  margin_km:
+    onshore: 35.0
+    offshore: 55.0
+  simplify_km: 2.0
+  project_anchor_guard_km: 10.0
